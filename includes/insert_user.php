@@ -14,13 +14,13 @@ if (isset($_POST['nom'])){
 
     // si l'utilisateur existe
     if (pseudoExist($pseudo)){
-        echo('le pseudo existe');
+        header('Location: ../index.php?pseudo=error');
         die();
     }
     
     // si l'utilisateur existe
     if (userExist($email)){
-        echo('le contact existe');
+        header('Location: ../index.php?pseudo=error');
         die();
     }
 
@@ -30,7 +30,7 @@ if (isset($_POST['nom'])){
     insertUser($email,$nom,$prenom,$trancheAge,$pseudo,$mdp);
 
     // va à la page du choix de difficulté du questionnaire
-    header('Location: ../difficulte.html');
+    header('Location: ../index.php');
         
     
 }
