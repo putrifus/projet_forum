@@ -2,25 +2,10 @@
 
 /* check session et type de salon */
 function chk_sess(){
-    $sessEnCours = false;
-    if (isset($_SESSION['login_afpChat'])){
-    $sessEnCours = true;
-    }
-    return $sessEnCours;
+    return isset($_SESSION['login_afpChat']);
 }
 
 function chk_salon(){
-    $salon = false;
-    if (isset($_GET['salon'])){
-        $salon = true;
-    }
-    return $salon;
+    return isset($_GET['salon']);
 }
 
-function chk_archive(){
-    $archive = false;
-    if (isset($_GET['archive'])){
-        $archive = true;
-    }
-    return $archive;
-}
