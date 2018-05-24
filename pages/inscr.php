@@ -11,18 +11,18 @@
   <title>Questionnaire AFPA</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="ressources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../ressources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Plugin CSS -->
-  <link href="ressources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+  <link href="../ressources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="ressources/css/freelancer.min.css" rel="stylesheet">
+  <link href="../ressources/css/freelancer.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
   <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div class="container">
       <!-- <img class="img-fluid mb-5 d-block mx-auto" src="img/logo_afpa.png" alt="">-->
-      <a class="navbar-brand js-scroll-trigger" href="https://www.afpa.fr/" target="blank"><img src="ressources/img/Logo_AFPA_2.png" alt="logo Afpa"></a>
+      <a class="navbar-brand js-scroll-trigger" href="https://www.afpa.fr/" target="blank"><img src="../ressources/img/Logo_AFPA_2.png" alt="logo Afpa"></a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -60,7 +60,7 @@
   <!-- Header -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
-      <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/profile.png" alt="">
+      <img class="img-fluid mb-5 d-block mx-auto" src="../ressources/img/profile.png" alt="">
       <!--  -->
       <h1 class="text-uppercase mb-0">Bienvenue sur notre formulaire</h1>
       <hr class="star-light">
@@ -77,7 +77,7 @@
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
           <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-          <form name="sentMessage" method="post" action="ressources/chkForm/insert_user.php">
+          <form name="sentMessage" method="post" action="../chkForm/insert_user.php">
           <!-- id="contactForm" -->
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -150,19 +150,19 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="ressources/vendor/jquery/jquery.min.js"></script>
-  <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../ressources/vendor/jquery/jquery.min.js"></script>
+  <script src="../ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Contact Form JavaScript -->
-  <script src="ressources/js/jqBootstrapValidation.js"></script>
-  <script src="ressources/js/contact_me.js"></script>
+  <script src="../ressources/js/jqBootstrapValidation.js"></script>
+  <script src="../ressources/js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="ressources/js/freelancer.min.js"></script>
+  <script src="../ressources/js/freelancer.min.js"></script>
 
 </body>
 

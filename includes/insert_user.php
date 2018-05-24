@@ -30,13 +30,13 @@ if (isset($_POST['nom'])){
     insertUser($email,$nom,$prenom,$trancheAge,$pseudo,$mdp);
 
     // va à la page du choix de difficulté du questionnaire
-    header('Location: ../difficulte.html');
+    header('Location: ../pages/difficulte.html');
         
     
 }
 else {
     
     /*revient sur la page d'accueil*/
-    header('Location: ../index.php');
+    header('Location: index.php');
 }
 ?>
