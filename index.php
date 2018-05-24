@@ -4,10 +4,15 @@ include("includes/fonctions.php");
 
 
 if (!(chk_sess_login())) {
-    include("pages/inscr.php");
-    if(chk_error()){
-        echo "pseudo utilisé";
+    if(!(chk_conn())){
+        include("pages/inscr.php");
+        if(chk_error()){
+            echo "pseudo utilisé";
+        }
+    } else {
+        include("pages/seconnecter.php");
     }
+
 } else {
     if (!(chk_diff())){
         include("pages/difficulte.php");

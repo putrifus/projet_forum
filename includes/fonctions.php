@@ -22,3 +22,7 @@ function chk_diff() {
     return isset($_GET['diff']);
 }
 
+function chk_conn() {
+    return isset($_GET['conn']);
+}
+

@@ -10,19 +10,19 @@
 
     <title>Choix difficulté</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template -->
+  <link href="ressources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+  <!-- Plugin CSS -->
+  <link href="ressources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="ressources/css/freelancer.min.css" rel="stylesheet">
 
 </head>
 
@@ -62,18 +62,19 @@
     <!-- Header -->
     <section id="contact">
         <div class="container seconnecter">
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+            <form name="sentMessage" method="post" action="chkForm/conn_user.php">
+            <!-- id="contactForm" -->
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label>Nom</label>
-                        <input class="form-control" id="Nom" type="text" placeholder="Nom" required="required" data-validation-required-message="Veuillez entrer votre nom.">
+                        <input class="form-control" id="pseudo" name="pseudo_conn" type="text" placeholder="Nom" required="required" data-validation-required-message="Veuillez entrer votre nom.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label>Mot de passe</label>
-                        <input class="form-control" id="mdp" type="password" placeholder="Mot de passe" required="required" data-validation-required-message="Veuillez entrer votre mot de passe.">
+                        <input class="form-control" id="mdp" name="mdp_conn" type="password" placeholder="Mot de passe" required="required" data-validation-required-message="Veuillez entrer votre mot de passe.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
@@ -93,19 +94,19 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="ressources/vendor/jquery/jquery.min.js"></script>
+    <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="ressources/js/jqBootstrapValidation.js"></script>
+    <script src="ressources/js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="ressources/js/freelancer.min.js"></script>
 
 </body>
 
