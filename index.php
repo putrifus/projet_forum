@@ -9,6 +9,11 @@ if (!(chk_sess_login())) {
         echo "pseudo utilisé";
     }
 } else {
-    include("pages/difficulte.php");
+    if (!(chk_diff())){
+        include("pages/difficulte.php");
+    } else {
+        /* lien à modifier pour arrivr a la page questionnaire*/
+        include("pages/classement.php");
+    }
 }
 ?>

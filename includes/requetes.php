@@ -22,7 +22,7 @@ function userExist($mail){
     
     $res = $req->fetch();
 
-    // s'il y a de résultat
+    // s'il y a des résultat
     if ($res){
         $test = true;
     } 
@@ -39,7 +39,7 @@ function pseudoExist($pseudo){
     
     $res = $req->fetch();
 
-    // s'il y a de résultat
+    // s'il y a des résultat
     if ($res){
         $test = true;
     } 

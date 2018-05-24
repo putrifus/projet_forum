@@ -11,18 +11,18 @@
     <title>Choix difficulté</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="ressources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="ressources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="ressources/css/freelancer.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
             <!-- <img class="img-fluid mb-5 d-block mx-auto" src="img/logo_afpa.png" alt="">-->
-            <a class="navbar-brand js-scroll-trigger" src="img/logo_afpa.png" href="#page-top"><img src="img/Logo_AFPA_2.png" alt="logo Afpa"></a>
+            <a class="navbar-brand js-scroll-trigger" href="https://www.afpa.fr/" target="blank"><img src="ressources/img/Logo_AFPA_2.png" alt="logo Afpa"></a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fa fa-bars"></i>
@@ -100,19 +100,19 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="ressources/vendor/jquery/jquery.min.js"></script>
+    <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="ressources/js/jqBootstrapValidation.js"></script>
+    <script src="ressources/js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="ressources/js/freelancer.min.js"></script>
 
 </body>
 

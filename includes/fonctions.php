@@ -5,10 +5,7 @@ function chk_sess_login(){
     return isset($_SESSION['login']);
 }
 
-/*function chk_salon(){
-    return isset($_GET['salon']);
-}*/
-
+/* Ereur pseudo utilisé */
 function chk_error() {
     if (isset($_GET['pseudo'])){
         if ($_GET['pseudo']=='error'){
@@ -19,5 +16,9 @@ function chk_error() {
     } else {
         return false;
     }
+}
+
+function chk_diff() {
+    return isset($_GET['diff']);
 }
 

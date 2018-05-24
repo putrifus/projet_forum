@@ -1,5 +1,6 @@
 <?php
 include ("../includes/requetes.php");
+session_start();
 
 // parse les entrées de l'utilisateur
 
@@ -25,10 +26,12 @@ if (isset($_POST['nom'])){
     }
 
     
-
     // entre l'utilisateur en bdd
     insertUser($email,$nom,$prenom,$trancheAge,$pseudo,$mdp);
 
+    // Set la session pour aller à la page de choix de difficulté
+    $_SESSION['login'] = $pseudo;
+    
     // va à la page du choix de difficulté du questionnaire
     header('Location: ../index.php');
         
