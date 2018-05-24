@@ -1,5 +1,5 @@
 <?php
-include ("../requetes.php");
+include ("../includes/requetes.php");
 session_start();
 
 // parse les entrées de l'utilisateur

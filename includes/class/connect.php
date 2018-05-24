@@ -7,7 +7,7 @@ class Connect {
     public function __construct(){
          try
         {
-            $this->_connexion = new PDO('mysql:host=127.0.0.1;dbname=forum;charset=utf8', 'root', 'root');
+            $this->_connexion = new PDO('mysql:host=127.0.0.1;dbname=forum;charset=utf8', 'root', '');
         }
         catch (Exception $e)
         {

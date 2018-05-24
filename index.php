@@ -18,7 +18,7 @@ if (!(chk_sess_login())) {
         include("pages/difficulte.php");
     } else {
         /* lien à modifier pour arrivr a la page questionnaire*/
-        include("pages/classement.php");
+        include("pages/questionnaire.php");
     }
 }
 ?>

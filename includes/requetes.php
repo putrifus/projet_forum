@@ -55,8 +55,8 @@ function pseudoExist($pseudo){
 }
 
 function getUser($pseudo) {
-$conn = new Requete();
-$req = $conn->connexion()->prepare('SELECT pseudo,mdp FROM utilisateur WHERE pseudo = :pseudo');
+$conn = new Connect();
+$req = $conn->get_connexion()->prepare('SELECT pseudo,mdp FROM utilisateur WHERE pseudo = :pseudo');
 $req->execute(array(
     'pseudo' => $pseudo));
 $res = $req->fetch();
