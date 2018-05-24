@@ -13,6 +13,13 @@ function insertUser($mail,$nom,$prenom,$trancheAge,$pseudo,$mdp) {
         'mdp' => $mdp));
 }
 
+function insertScore($pseudo) {
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare('INSERT INTO score (pseudo_user) VALUES (:pseudo)');
+    $req->execute(array(
+        'pseudo' => $pseudo));
+}
+
 function userExist($mail){
     $test = false;
     $conn = new Connect();

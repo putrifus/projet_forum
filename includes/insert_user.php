@@ -28,11 +28,12 @@ if (isset($_POST['nom'])){
     
     // entre l'utilisateur en bdd
     insertUser($email,$nom,$prenom,$trancheAge,$pseudo,$mdp);
+    insertScore($pseudo);
 
     // Set la session pour aller à la page de choix de difficulté
     $_SESSION['login'] = $pseudo;
     
-    // va à la page du choix de difficulté du questionnaire
+    // Boucle sur l'index vers page du choix de difficulté du questionnaire
     header('Location: ../index.php');
         
     
