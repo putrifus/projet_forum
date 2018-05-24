@@ -388,12 +388,77 @@ a:hover {
     border-color: #1a252f
 }
 
-#axel {
+#age {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     margin: auto;
     justify-content: space-around;
-    width: 50%;
-    padding-top: 30px;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.classement {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    margin: auto;
+}
+
+.questionnaire {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: 100%;
+}
+
+.pub {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+    margin: auto;
+}
+
+.card {
+    margin: auto;
+}
+
+.vraiFaux {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 3%;
+}
+
+.seconnecter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+    margin: auto;
+}
+
+.large {
+    width: 49%;
+}
+
+.caseFooter {
+    padding: 2%;
+    margin: auto;
+}
+
+#boutonJouer,
+#boutonConnection {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#sendMessageButton,
+#connexion {
+    margin: auto;
 }
