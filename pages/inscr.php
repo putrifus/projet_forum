@@ -103,19 +103,6 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
-            <div id="axel">
-              <br>
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='-18'>- 18 ans</label>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='18-25'>18-25 ans</label>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='+25'>+ 25 ans</label>
-
-              <p class="help-block text-danger"></p>
-            </div>
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -133,10 +120,23 @@
               </div>
             </div>
 
+            <div id="age">
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='-18'>- 18 ans</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='18-25'>18-25 ans</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='+25'>+ 25 ans</label>
+
+              <p class="help-block text-danger"></p>
+            </div>
+
             <br>
             
-            <div id="success"></div>
-            <div class="form-group">
+            <div id="boutonJouer">
               <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">JOUER</button>
             </div>
           </form>
