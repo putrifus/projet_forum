@@ -135,7 +135,7 @@ INSERT INTO `question` (`id`, `question`, `reponse`, `path_photo`, `type_questio
 (87, 'Le raccourci « ALT + F4 » imprime l\'écran actuel', 'Faux', 'image-d14.png', 'hard'),
 (88, 'Formater un ordinateur permet de créer un point de sauvegarde', 'Faux', 'image-d15.png', 'hard'),
 (89, 'Dans le jeu original Tetris, il existe 7 formes différentes', 'Vrai', 'image-d16.png', 'hard'),
-(90, 'La version de Windows qui précède Windows XP est Windows 98', 'Vrai', 'image-d17.png', 'hard'),
+(90, 'La version de Windows qui précède Windows XP est Windows 98', 'Faux', 'image-d17.png', 'hard'),
 (91, 'Le jeu vidéo populaire Candy Crush Saga a été développé par King', 'Vrai', 'image-d18.png', 'hard'),
 (92, 'L\'application mobile de navigation GPS Waze a été rachetée par Microsoft', 'Faux', 'image-d19.png', 'hard'),
 (93, 'En 3 jours, l\'intelligence artificielle de Google a appris le jeu de Go et écrasé la machine qui a détrôné l\'Homme', 'Vrai', 'image-d20.png', 'hard'),
