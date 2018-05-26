@@ -1,14 +1,16 @@
 <?php
-
+ 
 class Questionnaire {
-    private $_questions[];
-    private $_reponse[];
+    private $_questions;
+    private $_reponse;
+    private $_photo;
     private $_coefAnswer;
     private $_score;
     
-    public function __construct($questions,$reponses,$diff){
+    public function __construct($questions,$reponses,$photo,$diff){
         $this->_questions[] = $questions;
         $this->_reponses[] = $reponses;
+        $this->_photo = $photo;
 
         // set le coef en foncton de la difficulté 
         switch ($diff) {
@@ -39,6 +41,10 @@ class Questionnaire {
         if ($repUtil == $rep){
             $this->_score += $this->_coefAnswer;
         }   
+    }
+
+    public function test(){
+        return "test";
     }
 }
 ?>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include ("includes/class/questionnaire.php"); ?>
 <head>
 
     <meta charset="utf-8">
@@ -76,6 +76,17 @@
             </div>
         </div>
     </section>
+
+<?php
+$quest = unserialize($_SESSION['quest']); 
+echo($quest->test());
+/*if (isset($_SESSION['quest'])){
+    echo('quest ok');
+} else {
+    echo('putain c\'est pas set');
+}*/
+?>
+
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">

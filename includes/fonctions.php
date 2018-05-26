@@ -28,3 +28,9 @@ function chk_conn() {
     return isset($_GET['conn']);
 }
 
+// check si l'utilisateur a choisi ue difficulté
+// a voir si elle sert
+function chk_quest() {
+    return isset($_SESSION['quest']);
+}
+

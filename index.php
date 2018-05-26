@@ -14,10 +14,9 @@ if (!(chk_sess_login())) {
     }
 
 } else {
-    if (!(chk_diff())){
+    if (!(chk_diff()) && !(chk_quest())){
         include("pages/difficulte.php");
     } else {
-        /* lien à modifier pour arrivr a la page questionnaire*/
         include("pages/questionnaire.php");
     }
 }
