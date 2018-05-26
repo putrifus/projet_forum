@@ -1,5 +1,6 @@
 <?php
 include ("class/connect.php");
+include ("class/questionnaire.php");
 
 function insertUser($mail,$nom,$prenom,$trancheAge,$pseudo,$mdp) {
     $conn = new Connect();
@@ -62,4 +63,12 @@ $req->execute(array(
 $res = $req->fetch();
 return $res;
 }
+
+function getQuestionnaire($diff){
+$conn = new Connect();
+$req = $conn->get_connexion()->prepare('SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN(\':diff\') ORDER BY rand() LIMIT 10');
+$req->execute(array(
+    'diff' => $diff));
+}
+
 ?>
