@@ -1,11 +1,11 @@
 <?php
 
-/* check session et type de salon */
+/* check session */
 function chk_sess_login(){
     return isset($_SESSION['login']);
 }
 
-/* Ereur pseudo utilisé */
+/* Erreur pseudo utilisé */
 function chk_error() {
     if (isset($_GET['pseudo'])){
         if ($_GET['pseudo']=='error'){
@@ -18,10 +18,12 @@ function chk_error() {
     }
 }
 
+/* check si la difficulté a été choisie */
 function chk_diff() {
     return isset($_GET['diff']);
 }
 
+/* check si l'utilisateur veux se connecter */
 function chk_conn() {
     return isset($_GET['conn']);
 }
