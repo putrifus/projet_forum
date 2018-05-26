@@ -63,7 +63,7 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
             <h2>Choix difficulté</h2>
-            <a href="index.php?diff=easy"><button type="button" class="btn btn-primary btn-lg">Facile</button></a>
+            <a href="chkForm/get_questionnaire.php?diff=easy"><button type="button" class="btn btn-primary btn-lg">Facile</button></a>
             <a href="index.php?diff=medium"><button type="button" class="btn btn-primary btn-lg">Moyen</button>
             <a href="index.php?diff=hard"><button type="button" class="btn btn-primary btn-lg">Difficile</button>
         </div>
