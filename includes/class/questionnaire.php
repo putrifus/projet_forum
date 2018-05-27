@@ -1,15 +1,16 @@
 <?php
  
 class Questionnaire {
-    private $_questions;
-    private $_reponse;
-    private $_photo;
+    private $_questions = array();
+    private $_reponse = array();
+    private $_photo = array();
     private $_coefAnswer;
     private $_score;
+    private $_test = array();
     
     public function __construct($questions,$reponses,$photo,$diff){
-        $this->_questions[] = $questions;
-        $this->_reponses[] = $reponses;
+        $this->_questions = $questions;
+        $this->_reponse = $reponses;
         $this->_photo = $photo;
 
         // set le coef en foncton de la difficulté 
@@ -36,15 +37,19 @@ class Questionnaire {
     public function get_reponse($ind){
         return $this->_reponse[$ind];
     }
+
+    public function get_path($ind){
+        return $this->_photo[$ind];
+    }
+
+    public function get_score(){
+        return $this->_score;
+    }
     
     public function verifAnswer($repUtil,$rep) {
         if ($repUtil == $rep){
             $this->_score += $this->_coefAnswer;
-        }   
-    }
-
-    public function test(){
-        return "test";
+        } 
     }
 }
 ?>

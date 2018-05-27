@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include ("includes/class/questionnaire.php"); ?>
+<?php include ("includes/class/questionnaire.php"); 
+$quest = unserialize($_SESSION['quest']); 
+
+for ($i = 0;$i<10;$i++) {
+    $quest->verifAnswer("Vrai",$quest->get_reponse($i));
+}
+?>
 <head>
 
     <meta charset="utf-8">
@@ -62,7 +68,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container questionnaire">
-            <h3 class="text-center text-uppercase text-secondary mb-0 ">1 - Lorsque l'on bouge la souris est-ce que le curseur bouge?</h3>
+            <h3 class="text-center text-uppercase text-secondary mb-0 ">Et BIM ton score c'est <?php echo($quest->get_score());?> parce que t'as tout répondu Vrai</h3>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form name="questionnaire" id="questionnaire" novalidate="novalidate">
@@ -78,13 +84,21 @@
     </section>
 
 <?php
-$quest = unserialize($_SESSION['quest']); 
-echo($quest->test());
-/*if (isset($_SESSION['quest'])){
-    echo('quest ok');
-} else {
-    echo('putain c\'est pas set');
-}*/
+
+
+for ($i = 0;$i<10;$i++) {
+    echo($quest->get_question($i));
+    echo('<br>');
+    echo($quest->get_reponse($i));
+    echo('<br>');
+    echo($quest->get_path($i));
+    echo('<br>');
+    $quest->verifAnswer("Vrai",$quest->get_reponse($i));
+    echo('<br><br>');
+}
+
+
+
 ?>
 
 

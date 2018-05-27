@@ -65,6 +65,9 @@ return $res;
 }
 
 function getQuestionnaire($diff){
+$question = array();
+$reponse = array();
+$photo = array();
 $conn = new Connect();
 $res = $conn->get_connexion()->query("SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN('".$diff."') ORDER BY rand() LIMIT 10");
 //$req = $conn->get_connexion()->prepare('SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN(:diff) ORDER BY rand() LIMIT 10');
@@ -75,14 +78,14 @@ $res->setFetchMode(PDO::FETCH_OBJ);
 // ajoute les données récupérées aux tableaux correspondant
     while ($data = $res->fetch()) {
         // ajoute au  tableau question
-        $question[] = $data->question;
+        array_push($question,$data->question);
         // ajoute au  tableau reponse
-        $reponse[] = $data->reponse;
+        array_push($reponse,$data->reponse);
         // ajoute au  tableau photo
-        $photo[] = $data->path_photo;
+        array_push($photo,$data->path_photo);
     }
 // crée l'objet questionnaire
-$quest = new Questionnaire($questions,$reponses,$photo,$diff);
+$quest = new Questionnaire($question,$reponse,$photo,$diff);
 return $quest;
 $res->closeCursor();
 }
