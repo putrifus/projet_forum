@@ -1,1 +1,2 @@
-UPDATE score SET score_easy = 10 WHERE pseudo_user = 'yoyanne';
+UPDATE score SET score_medium = 20
+ WHERE pseudo_user like('loic');

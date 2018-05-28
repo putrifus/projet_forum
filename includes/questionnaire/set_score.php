@@ -29,10 +29,10 @@ echo('Difficulté : '.$colDiff."<br><br>");
 setScoreDiff($score,$pseudo,$colDiff);
 
 // recalcule le total des scores 
-//setScoreTotal($pseudo);
+setScoreTotal($pseudo);
 
 unset($_SESSION['quest']);
 
 // retournes à la page d'index avec le numéro de question suivante
-//header('Location: ../index.php');
+header('Location: ../index.php');
 ?>
