@@ -1,3 +1,3 @@
 <?php
-include ("../includes/lien/top.php");
+include ("../includes/lien/classement.php");
 ?>
