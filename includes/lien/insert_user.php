@@ -21,7 +21,7 @@ if (isset($_POST['nom'])){
     
     // si l'utilisateur existe
     if (userExist($email)){
-        header('Location: ../index.php?pseudo=error');
+        header('Location: ../index.php?mail=error');
         die();
     }
 

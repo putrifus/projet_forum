@@ -5,10 +5,22 @@ function chk_sess_login(){
     return isset($_SESSION['login']);
 }
 
-/* Erreur pseudo utilisé */
-function chk_error() {
+/* Erreur pseudo/mail utilisé */
+function chk_error_pseudo() {
     if (isset($_GET['pseudo'])){
         if ($_GET['pseudo']=='error'){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+function chk_error_mail() {
+    if (isset($_GET['mail'])){
+        if ($_GET['mail']=='error'){
             return true;
         } else {
             return false;
@@ -33,4 +45,3 @@ function chk_conn() {
 function chk_quest() {
     return isset($_SESSION['quest']);
 }
-

@@ -89,4 +89,21 @@ $quest = new Questionnaire($question,$reponse,$photo,$diff);
 return $quest;
 $res->closeCursor();
 }
+
+function top_classement(){
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score order by score_total ASC limit 10");
+    $res = $req->fetch();
+
+    return $res;
+}
+
+function your_score(){
+    $user = $_SESSION['pseudo'];
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score where pseudo_user = '$user'");
+    $res = $req->fetch();
+
+    return $res;
+}
 ?>
