@@ -92,7 +92,7 @@ $res->closeCursor();
 
 function top_classement(){
     $conn = new Connect();
-    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score order by score_total DESC limit 10");
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC LIMIT 10");
     $res = $req->fetch();
 
     return $res;
@@ -101,7 +101,7 @@ function top_classement(){
 function your_score(){
     $user = $_SESSION['pseudo'];
     $conn = new Connect();
-    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score where pseudo_user = '".$user."'");
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score WHERE pseudo_user = '".$user."'");
     $res = $req->fetch();
 
     return $res;
