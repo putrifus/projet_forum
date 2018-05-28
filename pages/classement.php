@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
+//include ("includes/requetes.php");
+//$res = unserialize($_SESSION['classement']); 
 ?>
 <head>
 
@@ -66,12 +67,15 @@ session_start();
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
-    
+
     <!-- Affichage du score si on arrive sur cette page après la fin d'un questionnaire -->
     <h4 class="text-center text-uppercase text-secondary mb-0 ">
         <?php  
-            if (isset($_SESSION['score']))
+            if (isset($_SESSION['score'])){
             echo("Ton score : ".$_SESSION['score']); 
+            // unset la session score pour retourner à la page du choix du questionnaire
+            unset($_SESSION['score']);
+            }
         ?>
     </h4><br><br><br>
 
@@ -79,31 +83,13 @@ session_start();
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>classement</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
+                        <th>Classement</th>
+                        <th>Pseudo</th>
                         <th>Score</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Bob</td>
-                        <td>bob</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Moe</td>
-                        <td>moe</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Dooley</td>
-                        <td>dooley</td>
-                        <td>25</td>
-                    </tr>
+                    <?php echo($_SESSION['classement']); ?>
                 </tbody>
             </table>
         </div>

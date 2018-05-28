@@ -49,3 +49,15 @@ function chk_quest() {
 function chk_score() {
     return isset($_SESSION['score']);
 }
+
+// imprime le classement dans la page classement
+function printHightScore($res){
+    $tab = "";
+    $cpt = 1;
+    while ($data = $res->fetch()) {
+        $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        //echo("<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>");
+        $cpt++;
+    }
+    return $tab;
+}

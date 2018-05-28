@@ -1,7 +1,7 @@
 <?php
 session_start();
-//include ("../includes/class/questionnaire.php");
 include ("../includes/requetes.php");
+include ("../includes/fonctions.php");
 
 // récupération des datas
 $quest = unserialize($_SESSION['quest']);
@@ -34,6 +34,13 @@ unset($_SESSION['quest']);
 
 // set une session avec le score de la partie qui vient d'être jouée
 $_SESSION['score'] = $score;
+
+// récupère le tableau des hightscore
+$res = top_classement();
+
+// génére le code html pour l'affichage du classement et la met en session
+
+$_SESSION['classement'] = printHightScore($res);
 
 // retournes à la page d'index avec le numéro de question suivante
 header('Location: ../index.php');
