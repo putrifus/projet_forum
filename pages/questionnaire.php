@@ -2,10 +2,8 @@
 <html lang="en">
 <?php include ("includes/class/questionnaire.php"); 
 $quest = unserialize($_SESSION['quest']); 
+$numQuest = $_GET['question'] - 1;
 
-for ($i = 0;$i<10;$i++) {
-    $quest->verifAnswer("Vrai",$quest->get_reponse($i));
-}
 ?>
 <head>
 
@@ -70,14 +68,22 @@ for ($i = 0;$i<10;$i++) {
     <!-- Contact Section -->
     <section id="contact">
         <div class="container questionnaire">
-            <h3 class="text-center text-uppercase text-secondary mb-0 ">Et BIM ton score c'est <?php echo($quest->get_score());?> parce que t'as tout répondu Vrai</h3>
+            
+            <h3 class="text-center text-uppercase text-secondary mb-0 ">
+                <?php  if ($_GET['question'] <= 10) {
+                            echo($quest->get_question($numQuest));
+                        } else {
+                            echo("Et Bim ton score : ".$quest->get_score());
+                        } 
+                ?>
+            </h3>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form name="questionnaire" id="questionnaire" novalidate="novalidate">
+                    <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php?question=<?php echo($_GET['question']); ?>">
                         <br>
                         <div class="form-group vraiFaux">
-                            <button type="submit" name="yes_button" class="btn btn-xl btn-success large">VRAI</button>
-                            <button type="submit" name="no_button" class="btn btn-xl btn-danger large">FAUX</button>
+                            <button type="submit" name="Vrai" value="Vrai" class="btn btn-xl btn-success large">VRAI</button>
+                            <button type="submit" name="Faux" value="Faux" class="btn btn-xl btn-danger large">FAUX</button>
                         </div>
                     </form>
                 </div>
@@ -86,20 +92,6 @@ for ($i = 0;$i<10;$i++) {
     </section>
 
 <?php
-
-
-for ($i = 0;$i<10;$i++) {
-    echo($quest->get_question($i));
-    echo('<br>');
-    echo($quest->get_reponse($i));
-    echo('<br>');
-    echo($quest->get_path($i));
-    echo('<br>');
-    $quest->verifAnswer("Vrai",$quest->get_reponse($i));
-    echo('<br><br>');
-}
-
-
 
 ?>
 
@@ -126,6 +118,16 @@ for ($i = 0;$i<10;$i++) {
     <!-- Custom scripts for this template -->
     <script src="ressources/js/freelancer.min.js"></script>
 
+
+<?php
+function affich(){
+    if ($_GET['question'] <= 10) {
+        echo($quest->get_question($numQuest));
+    } else {
+        echo("Et Bim ton score : ".$quest->get_score());
+    }
+}
+?>
 </body>
 
 </html>
