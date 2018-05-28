@@ -6,11 +6,13 @@ session_start();
 $quest = getQuestionnaire($_GET['diff']);
 
 // crée une session avec le questionnaire
-$_SESSION['quest'] = serialize($quest); 
+$_SESSION['quest'] = serialize($quest);
 
-
+// crée une session avec le numéro de la question
+$_SESSION['numQuest'] = 1;
 
 // retournes à la page d'index avec le numéro de question en get
-header('Location: ../index.php?question=1');
+$header = "Location: ../index.php";
+header($header);
 
 ?>

@@ -70,10 +70,6 @@ $reponse = array();
 $photo = array();
 $conn = new Connect();
 $res = $conn->get_connexion()->query("SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN('".$diff."') ORDER BY rand() LIMIT 10");
-//$req = $conn->get_connexion()->prepare('SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN(:diff) ORDER BY rand() LIMIT 10');
-//$req->execute(array(
- //   'diff' => $diff));
-//$res = $req->fetch();
 $res->setFetchMode(PDO::FETCH_OBJ);
 // ajoute les données récupérées aux tableaux correspondant
     while ($data = $res->fetch()) {
