@@ -1,32 +1,26 @@
 <?php
 session_start();
 include("includes/fonctions.php");
-include("includes/requete.php");
 
 
-if (!(chk_sess())) {
-    include("pages/conn.php");
-} else {
-    if (!(chk_salon())) {
-        include("pages/salon.php");
-    } else {
-        set_salon($_SESSION['login_afpChat']);
-        if (!(chk_archive())) {
-            include("pages/messagerie.php");
-        } else {
-            include("pages/archive.php");
+if (!(chk_sess_login())) {
+    if(!(chk_conn())){
+        include("pages/inscr.php");
+        if(chk_error_pseudo()){
+            echo "pseudo utilisé";
+        } if(chk_error_mail()){
+            echo "mail utilisé";
         }
+    } else {
+        include("pages/seconnecter.php");
+    }
+
+} else {
+    if (!(chk_diff()) && !(chk_quest())){
+        include("pages/difficulte.php");
+    }
+    else {
+        include("pages/questionnaire.php");
     }
 }
 ?>
-
-<script type='text/javascript'>
-//window.onbeforeunload = function (e) {
-window.addEventListener("beforeunload", function (e) {
-  confirmationMessage = "test";
-    alert('test alert');
-  e.returnValue = confirmationMessage;     
-  return confirmationMessage;            
-
-});
-</script>

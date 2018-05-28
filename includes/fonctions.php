@@ -1,26 +1,47 @@
 <?php
 
-/* check session et type de salon */
-function chk_sess(){
-    $sessEnCours = false;
-    if (isset($_SESSION['login_afpChat'])){
-    $sessEnCours = true;
-    }
-    return $sessEnCours;
+/* check session */
+function chk_sess_login(){
+    return isset($_SESSION['login']);
 }
 
-function chk_salon(){
-    $salon = false;
-    if (isset($_GET['salon'])){
-        $salon = true;
+/* Erreur pseudo/mail utilisé */
+function chk_error_pseudo() {
+    if (isset($_GET['pseudo'])){
+        if ($_GET['pseudo']=='error'){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
     }
-    return $salon;
 }
 
-function chk_archive(){
-    $archive = false;
-    if (isset($_GET['archive'])){
-        $archive = true;
+function chk_error_mail() {
+    if (isset($_GET['mail'])){
+        if ($_GET['mail']=='error'){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
     }
-    return $archive;
+}
+
+/* check si la difficulté a été choisie */
+function chk_diff() {
+    return isset($_GET['diff']);
+}
+
+/* check si l'utilisateur veux se connecter */
+function chk_conn() {
+    return isset($_GET['conn']);
+}
+
+// check si l'utilisateur a choisi ue difficulté
+// a voir si elle sert
+function chk_quest() {
+    return isset($_SESSION['quest']);
 }

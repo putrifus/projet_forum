@@ -1,5 +1,6 @@
 <?php
 include ("../includes/requetes.php");
+session_start();
 
 // parse les entrées de l'utilisateur
 
@@ -14,23 +15,31 @@ if (isset($_POST['nom'])){
 
     // si l'utilisateur existe
     if (pseudoExist($pseudo)){
-        echo('le pseudo existe');
+        header('Location: ../index.php?pseudo=error');
         die();
     }
     
     // si l'utilisateur existe
     if (userExist($email)){
-        echo('le contact existe');
+        header('Location: ../index.php?mail=error');
         die();
     }
 
     
-
     // entre l'utilisateur en bdd
     insertUser($email,$nom,$prenom,$trancheAge,$pseudo,$mdp);
+    insertScore($pseudo);
 
+<<<<<<< HEAD:includes/insert_user.php
     // va à la page du choix de difficulté du questionnaire
     header('Location: ../pages/difficulte.html');
+=======
+    // Set la session pour aller à la page de choix de difficulté
+    $_SESSION['login'] = $pseudo;
+    
+    // Boucle sur l'index vers page du choix de difficulté du questionnaire
+    header('Location: ../index.php');
+>>>>>>> code_php:includes/lien/insert_user.php
         
     
 }

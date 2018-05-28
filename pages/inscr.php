@@ -41,7 +41,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
+<<<<<<< HEAD
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Accueil</a>
+=======
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Accueil</a>
+>>>>>>> code_php
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="questionnaire.html">Questionnaire</a>
@@ -53,7 +57,11 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.html">Liens</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
+<<<<<<< HEAD
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="seconnecter.html">Se connecter</a>
+=======
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php?conn=1">Se connecter</a>
+>>>>>>> code_php
           </li>
         </ul>
       </div>
@@ -80,7 +88,11 @@
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
           <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+<<<<<<< HEAD
           <form name="sentMessage" method="post" action="../chkForm/insert_user.php">
+=======
+          <form name="sentMessage" method="post" action="chkForm/insert_user.php">
+>>>>>>> code_php
           <!-- id="contactForm" -->
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -103,19 +115,6 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
-            <div id="axel">
-              <br>
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='-18'>- 18 ans</label>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='18-25'>18-25 ans</label>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='+25'>+ 25 ans</label>
-
-              <p class="help-block text-danger"></p>
-            </div>
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -133,10 +132,23 @@
               </div>
             </div>
 
+            <div id="age">
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='-18'>- 18 ans</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='18-25'>18-25 ans</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="radio-inline">
+                <input type="radio" name="trancheAge" value='+25'>+ 25 ans</label>
+
+              <p class="help-block text-danger"></p>
+            </div>
+
             <br>
             
-            <div id="success"></div>
-            <div class="form-group">
+            <div id="boutonJouer">
               <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">JOUER</button>
             </div>
           </form>
@@ -146,12 +158,21 @@
   </section>
 
   <!-- Footer -->
+<<<<<<< HEAD
   <!-- A copier coller en bas de chaque page une fois fini -->
   <footer class="footer text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 caseFooter">
                     <img class="img-fluid mb-5 d-block mx-auto" src="img/adefi_final.png" alt="">
+=======
+    <!-- A copier coller en bas de chaque page une fois fini -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 caseFooter">
+                    <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/adefi_final.png" alt="">
+>>>>>>> code_php
                     <p class="lead mb-0">Description ADEFI <br>
                         <a href="">lien ADEFI</a>.</p>
                 </div>

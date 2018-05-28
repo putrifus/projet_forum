@@ -1,5 +1,6 @@
 <?php
 include ("class/connect.php");
+include ("class/questionnaire.php");
 
 function insertUser($mail,$nom,$prenom,$trancheAge,$pseudo,$mdp) {
     $conn = new Connect();
@@ -13,6 +14,13 @@ function insertUser($mail,$nom,$prenom,$trancheAge,$pseudo,$mdp) {
         'mdp' => $mdp));
 }
 
+function insertScore($pseudo) {
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare('INSERT INTO score (pseudo_user) VALUES (:pseudo)');
+    $req->execute(array(
+        'pseudo' => $pseudo));
+}
+
 function userExist($mail){
     $test = false;
     $conn = new Connect();
@@ -22,7 +30,7 @@ function userExist($mail){
     
     $res = $req->fetch();
 
-    // s'il y a de résultat
+    // s'il y a des résultat
     if ($res){
         $test = true;
     } 
@@ -39,7 +47,7 @@ function pseudoExist($pseudo){
     
     $res = $req->fetch();
 
-    // s'il y a de résultat
+    // s'il y a des résultat
     if ($res){
         $test = true;
     } 
@@ -47,4 +55,55 @@ function pseudoExist($pseudo){
     return $test;
 }
 
+function getUser($pseudo) {
+$conn = new Connect();
+$req = $conn->get_connexion()->prepare('SELECT pseudo,mdp FROM utilisateur WHERE pseudo = :pseudo');
+$req->execute(array(
+    'pseudo' => $pseudo));
+$res = $req->fetch();
+return $res;
+}
+
+function getQuestionnaire($diff){
+$question = array();
+$reponse = array();
+$photo = array();
+$conn = new Connect();
+$res = $conn->get_connexion()->query("SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN('".$diff."') ORDER BY rand() LIMIT 10");
+//$req = $conn->get_connexion()->prepare('SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN(:diff) ORDER BY rand() LIMIT 10');
+//$req->execute(array(
+ //   'diff' => $diff));
+//$res = $req->fetch();
+$res->setFetchMode(PDO::FETCH_OBJ);
+// ajoute les données récupérées aux tableaux correspondant
+    while ($data = $res->fetch()) {
+        // ajoute au  tableau question
+        array_push($question,$data->question);
+        // ajoute au  tableau reponse
+        array_push($reponse,$data->reponse);
+        // ajoute au  tableau photo
+        array_push($photo,$data->path_photo);
+    }
+// crée l'objet questionnaire
+$quest = new Questionnaire($question,$reponse,$photo,$diff);
+return $quest;
+$res->closeCursor();
+}
+
+function top_classement(){
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score order by score_total ASC limit 10");
+    $res = $req->fetch();
+
+    return $res;
+}
+
+function your_score(){
+    $user = $_SESSION['pseudo'];
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score where pseudo_user = '$user'");
+    $res = $req->fetch();
+
+    return $res;
+}
 ?>
