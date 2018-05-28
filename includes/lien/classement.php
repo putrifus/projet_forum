@@ -6,6 +6,12 @@ if(isset($_SESSION['login'])){
 }
 if ($user != null) {
     echo "votre score : " . your_score($user);
-    echo top_classement(); 
+    echo "<BR>";
+    while($data = top_classement()->fetch()){
+        echo $data->pseudo_user;
+        echo $score,$data->score_total;
+    }
+} else {
+    echo "top 10";
 }
 ?>
