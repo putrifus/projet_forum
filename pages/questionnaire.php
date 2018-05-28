@@ -44,7 +44,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php?select=0">Choix de difficulté</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="chkForm/unset_quest.php">Choix de difficulté</a>
                     </li>
                     <!--
                     <li class="nav-item mx-0 mx-lg-1">
@@ -52,7 +52,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
                     </li>
                     -->
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php?classement=top3">Classement</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="chkForm/classement.php">Classement</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.html">Liens</a>

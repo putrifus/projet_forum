@@ -89,18 +89,19 @@ $res->closeCursor();
 function top_classement(){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC LIMIT 10");
-    $res = $req->fetch();
+    $res->fetch();
 
     return $res;
 }
 
-function your_score(){
-    $user = $_SESSION['pseudo'];
+function your_score($user){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score WHERE pseudo_user = '".$user."'");
-    $res = $req->fetch();
-
-    return $res;
+    $res->setFetchMode(PDO::FETCH_OBJ);
+    while ($data = $res->fetch()) {
+       $score = $data->score_total;
+    }
+    return $score;
 }
 
 function setScoreDiff($score,$pseudo,$diff){

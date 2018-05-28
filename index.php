@@ -18,7 +18,9 @@ if (!(chk_sess_login())) {
 } else {
     if (!(chk_diff()) && !(chk_quest())){
         include("pages/difficulte.php");
-    }
+    } //else if(isset($_GET['select'])){
+        //include("pages/difficulte.php");
+    //}
     else {
         include("pages/questionnaire.php");
     }
