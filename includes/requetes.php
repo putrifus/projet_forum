@@ -101,7 +101,7 @@ function top_classement(){
 function your_score(){
     $user = $_SESSION['pseudo'];
     $conn = new Connect();
-    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score where pseudo_user = '$user'");
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score where pseudo_user = '".$user."'");
     $res = $req->fetch();
 
     return $res;
