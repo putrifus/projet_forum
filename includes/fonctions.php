@@ -41,7 +41,11 @@ function chk_conn() {
 }
 
 // check si l'utilisateur a choisi ue difficulté
-// a voir si elle sert
 function chk_quest() {
     return isset($_SESSION['quest']);
+}
+
+// check si l'utilisateur a fini le questionnaire
+function chk_score() {
+    return isset($_SESSION['score']);
 }

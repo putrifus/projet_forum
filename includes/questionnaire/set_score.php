@@ -22,16 +22,18 @@ switch ($diff) {
         $colDiff = "score_hard";
         break;
 }
-echo('Login : '.$pseudo."<br><br>");
-echo('Score : '.$score."<br><br>");
-echo('Difficulté : '.$colDiff."<br><br>");
+
 // set le score en BDD
 setScoreDiff($score,$pseudo,$colDiff);
 
-// recalcule le total des scores 
+// recalcule le total des scores en bdd
 setScoreTotal($pseudo);
 
+// supprime le questionnaire
 unset($_SESSION['quest']);
+
+// set une session avec le score de la partie qui vient d'être jouée
+$_SESSION['score'] = $score;
 
 // retournes à la page d'index avec le numéro de question suivante
 header('Location: ../index.php');

@@ -16,13 +16,16 @@ if (!(chk_sess_login())) {
     }
 
 } else {
-    if (!(chk_diff()) && !(chk_quest())){
+    if (!(chk_diff()) && !(chk_quest()) && !(chk_score())){
         include("pages/difficulte.php");
-    } //else if(isset($_GET['select'])){
-        //include("pages/difficulte.php");
-    //}
+    } 
     else {
-        include("pages/questionnaire.php");
+        if (chk_quest() && !(chk_score())){
+            include("pages/questionnaire.php");
+        } else {
+            include("pages/classement.php");
+        }
+        
     }
 }
 ?>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+?>
 <head>
 
     <meta charset="utf-8">
@@ -64,6 +66,15 @@
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
+    
+    <!-- Affichage du score si on arrive sur cette page après la fin d'un questionnaire -->
+    <h4 class="text-center text-uppercase text-secondary mb-0 ">
+        <?php  
+            if (isset($_SESSION['score']))
+            echo("Ton score : ".$_SESSION['score']); 
+        ?>
+    </h4><br><br><br>
+
         <div class="container">
             <table class="table table-striped">
                 <thead>
