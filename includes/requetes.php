@@ -92,7 +92,7 @@ $res->closeCursor();
 
 function top_classement(){
     $conn = new Connect();
-    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score order by score_total ASC limit 10");
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score order by score_total DESC limit 10");
     $res = $req->fetch();
 
     return $res;
