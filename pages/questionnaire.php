@@ -73,7 +73,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
                 <?php  if ($numQuest <= 9) {
                             echo($quest->get_question($numQuest));
                         } else {
-                            echo("Et Bim ton score : ".$quest->get_score());
+                            header('Location: chkForm/set_score.php');
                         } 
                 ?>
             </h3>

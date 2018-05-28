@@ -102,4 +102,20 @@ function your_score(){
 
     return $res;
 }
+
+function setScoreDiff($score,$pseudo,$diff){
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare("UPDATE score SET :diff = :score WHERE pseudo_user = :pseudo");
+    $req->execute(array(
+        'diff' => $diff,
+        'score' => $score,
+        'pseudo' => $pseudo));
+}
+
+function setScoreTotal($pseudo){
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare("UPDATE score SET score_total = (score_easy + score_medium + score_hard) WHERE pseudo_user IN(':pseudo');");
+    $req->execute(array(
+        'pseudo' => $pseudo));
+}
 ?>

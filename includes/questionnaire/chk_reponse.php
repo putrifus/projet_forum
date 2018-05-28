@@ -17,7 +17,6 @@ if (isset($_POST['Vrai'])){
 
 // MAJ le score en fonction de la réponse
 $quest->verifAnswer( $rep,$quest->get_reponse($numQuest));
-echo("<br><br>et bim ton score : <br>".$quest->get_score() );
 
 // set la session questionnaire avec le score 
 $_SESSION['quest'] = serialize($quest); 
@@ -26,6 +25,5 @@ $_SESSION['quest'] = serialize($quest);
 $_SESSION['numQuest'] += 1;
 
 // retournes à la page d'index avec le numéro de question suivante
-$header = "Location: ../index.php";
-header($header);
+header('Location: ../index.php');
 ?>
