@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 24 mai 2018 à 13:48
--- Version du serveur :  5.7.19-log
+-- Généré le :  lun. 28 mai 2018 à 19:22
+-- Version du serveur :  5.7.21-log
 -- Version de PHP :  7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -173,21 +173,24 @@ CREATE TABLE IF NOT EXISTS `score` (
   `score_total` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_score_to_util` (`pseudo_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `score`
 --
 
 INSERT INTO `score` (`id`, `pseudo_user`, `score_easy`, `score_medium`, `score_hard`, `score_total`) VALUES
-(1, 'Yoyanne', 0, 0, 0, 0),
-(2, 'Julien', 0, 0, 0, 0),
-(3, 'Axel', 0, 0, 0, 0),
-(4, 'Loic', 0, 0, 0, 0),
-(5, 'Benoit', 0, 0, 0, 0),
-(6, 'Franck', 0, 0, 0, 0),
-(7, 'Sebastien', 0, 0, 0, 0),
-(8, 'Christophe', 0, 0, 0, 0);
+(1, 'Yoyanne', 10, 16, 36, 62),
+(2, 'Julien', 5, 4, 12, 21),
+(3, 'Axel', 5, 16, 20, 41),
+(4, 'Loic', 6, 8, 20, 34),
+(5, 'Benoit', 5, 2, 16, 23),
+(6, 'Franck', 3, 16, 8, 27),
+(7, 'Sebastien', 9, 12, 16, 37),
+(8, 'Christophe', 4, 12, 28, 44),
+(9, 'LilWhoreStier', 4, 8, 24, 36),
+(10, 'CalviStier', 4, 10, 24, 38),
+(11, 'CrewStiant', 2, 20, 28, 50);
 
 -- --------------------------------------------------------
 
@@ -206,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -220,7 +223,10 @@ INSERT INTO `utilisateur` (`id`, `email`, `nom`, `prenom`, `tranche_d_age`, `pse
 (5, 'ben@ben.fr', 'Poux', 'Benoit', '+25', 'Benoit', '$2y$10$9TAS2vNzshofD499WHFPHOReDyhmJ43zJApZS7Uw.CENuykXTzR26'),
 (6, 'franck@franck.fr', 'Nouvion', 'Franck', '18-25', 'Franck', '$2y$10$RvjAjla3NXMGGiTC.2ajNOgI2axbP/6YbGH/V5K.1yJMAvZ1obp1e'),
 (7, 'seb@seb.fr', 'DeGouy', 'Sebastien', '+25', 'Sebastien', '$2y$10$A5jBAi.1f4Wo282Qj8JRLOVwjfAqMCQYv7rmTJTcRQ7nvTnfwNzWq'),
-(8, 'chris@chris.fr', 'Carsalade', 'Christophe', '+25', 'Christophe', '$2y$10$gO286Mp8yPh4Naj9L7mQfOJxLtDVo7DTTFy.kH/oXRmrX86Pokh3S');
+(8, 'chris@chris.fr', 'Carsalade', 'Christophe', '+25', 'Christophe', '$2y$10$gO286Mp8yPh4Naj9L7mQfOJxLtDVo7DTTFy.kH/oXRmrX86Pokh3S'),
+(9, 'lilwhore@gmail.com', 'Stiant', 'Crew', '18-25', 'LilWhoreStier', '$2y$10$LGsGxO0s4RJ0FmC2nL19zusM9TQn1Ne4hxPxRiNqzb6Xg/B0KuZQG'),
+(10, 'calvi@crewstiant.fr', 'Stiant', 'Crew', '18-25', 'CalviStier', '$2y$10$2VGR1SOeuOCfh7h8JMWGU.dg8DP1M1QlFR3o3F4050AjyNVF/ZpO2'),
+(11, 'stiant@crewstiant.fr', 'Stiant', 'Crew', '18-25', 'CrewStiant', '$2y$10$TpS/9SwAKPxgKQDRL.xhTeIwy0M0fDVmCHyNPkAr/pzqssQ5C4KKC');
 
 --
 -- Contraintes pour les tables déchargées
