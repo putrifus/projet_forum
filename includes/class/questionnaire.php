@@ -6,6 +6,7 @@ class Questionnaire {
     private $_photo = array();
     private $_coefAnswer;
     private $_score;
+    private $_diff;
     private $_test = array();
     
     public function __construct($questions,$reponses,$photo,$diff){
@@ -17,17 +18,21 @@ class Questionnaire {
         switch ($diff) {
             case "easy":
                 $this->_coefAnswer = 1;
+                $this->_diff = "Facile";
                 break;
             case "medium":
                 $this->_coefAnswer = 2;
+                $this->_diff = "Moyen";
                 break;
             case "hard":
                 $this->_coefAnswer = 4;
+                $this->_diff = "Difficile";
                 break;
         }
 
         // set le score à 0 à l'instanciation du formulaire
         $this->_score = 0;
+
     }
 
     public function get_question($ind){
@@ -46,6 +51,10 @@ class Questionnaire {
         return $this->_score;
     }
     
+    public function get_diff(){
+        return $this->_diff;
+    }
+
     public function verifAnswer($repUtil,$rep) {
         if ($repUtil == $rep){
             $this->_score += $this->_coefAnswer;

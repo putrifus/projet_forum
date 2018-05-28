@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("includes/class/questionnaire.php"); 
 $quest = unserialize($_SESSION['quest']); 
-$numQuest = $_GET['question'] - 1;
+$numQuest = $_SESSION['numQuest'] - 1;
 
 ?>
 <head>
@@ -68,18 +68,18 @@ $numQuest = $_GET['question'] - 1;
     <!-- Contact Section -->
     <section id="contact">
         <div class="container questionnaire">
-            
+            <h4 class="text-center text-uppercase text-secondary mb-0 ">Questionnaire <?php  echo($quest->get_diff()); ?></h4><br>
             <h3 class="text-center text-uppercase text-secondary mb-0 ">
-                <?php  if ($_GET['question'] <= 10) {
+                <?php  if ($numQuest <= 9) {
                             echo($quest->get_question($numQuest));
                         } else {
-                            echo("Et Bim ton score : ".$quest->get_score());
+                            header('Location: chkForm/set_score.php');
                         } 
                 ?>
             </h3>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php?question=<?php echo($_GET['question']); ?>">
+                    <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php?>">
                         <br>
                         <div class="form-group vraiFaux">
                             <button type="submit" name="Vrai" value="Vrai" class="btn btn-xl btn-success large">VRAI</button>

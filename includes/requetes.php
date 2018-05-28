@@ -70,10 +70,6 @@ $reponse = array();
 $photo = array();
 $conn = new Connect();
 $res = $conn->get_connexion()->query("SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN('".$diff."') ORDER BY rand() LIMIT 10");
-//$req = $conn->get_connexion()->prepare('SELECT question,reponse,path_photo FROM question WHERE type_questionnaire IN(:diff) ORDER BY rand() LIMIT 10');
-//$req->execute(array(
- //   'diff' => $diff));
-//$res = $req->fetch();
 $res->setFetchMode(PDO::FETCH_OBJ);
 // ajoute les données récupérées aux tableaux correspondant
     while ($data = $res->fetch()) {
@@ -106,5 +102,21 @@ function your_score($user){
        $score = $data->score_total;
     }
     return $score;
+}
+
+function setScoreDiff($score,$pseudo,$diff){
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare("UPDATE score SET :diff = :score WHERE pseudo_user = :pseudo");
+    $req->execute(array(
+        'diff' => $diff,
+        'score' => $score,
+        'pseudo' => $pseudo));
+}
+
+function setScoreTotal($pseudo){
+    $conn = new Connect();
+    $req = $conn->get_connexion()->prepare("UPDATE score SET score_total = (score_easy + score_medium + score_hard) WHERE pseudo_user IN(':pseudo');");
+    $req->execute(array(
+        'pseudo' => $pseudo));
 }
 ?>
