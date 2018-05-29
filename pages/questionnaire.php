@@ -78,7 +78,11 @@ $numQuest = $_SESSION['numQuest'] - 1;
                 ?>
             </h3>
             <figure class="imageflottanteQuestion">
-                <img src="ressources/img/image-d3.png" class="imageQuestion" alt="Image question">
+                <img src="
+                    <?php
+                        echo($quest->get_path($numQuest))
+                    ?>
+                " class="imageQuestion" alt="Image question">
             </figure>
             <div class="row ligneVraiFaux">
                 <div class="col-lg-8 mx-auto">
