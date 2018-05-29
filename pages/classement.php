@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-//include ("includes/requetes.php");
-//$res = unserialize($_SESSION['classement']); 
-?>
+
 <head>
 
     <meta charset="utf-8">
@@ -43,7 +40,15 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Nouveau questionnaire</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">
+                            <?php
+                                if (!(isset($_SESSION['score']))){
+                                    echo("Jouer");
+                                } else {
+                                    echo("Nouveau questionnaire");
+                                }
+                            ?>
+                        </a>
                     </li>
                     <!--
                     <li class="nav-item mx-0 mx-lg-1">
@@ -58,7 +63,15 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.php">Liens</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="chkForm/deconnexion.php">Se Déconnecter</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            <?php
+                                if (!(isset($_SESSION['login']))){
+                                    echo("href=\"index.php?conn=1\">Se connecter");
+                                } else {
+                                    echo("href=\"chkForm/deconnexion.php\">Se Déconnecter");
+                                }
+                            ?>    
+                        </a>
                     </li>
                 </ul>
             </div>

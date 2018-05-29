@@ -71,7 +71,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
             <h4 class="text-center text-uppercase text-secondary mb-0 ">Questionnaire <?php  echo($quest->get_diff()); ?></h4><br>
             <h3 class="text-center text-uppercase text-secondary mb-0 ">
                 <?php  if ($numQuest <= 9) {
-                            echo($quest->get_question($numQuest));
+                            echo("Question ".$_SESSION['numQuest']." : ".$quest->get_question($numQuest));
                         } else {
                             header('Location: chkForm/set_score.php');
                         } 
