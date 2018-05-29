@@ -1,17 +1,15 @@
 <?php
 include ("../includes/requetes.php");
+include ("../includes/fonctions.php");
 session_start();
-if(isset($_SESSION['login'])){
-    $user = $_SESSION['login'];
+
+//récupère les résultats de la requete sur le score
+$res = top_classement();
+//retourne le code html du tableau de score
+$_SESSION['classement'] = printHightScore($res);
+//unset le questionnaire si il existe
+if(isset($_SESSION['quest'])){
+    unset($_SESSION['quest']);
 }
-if ($user != null) {
-    echo "votre score : " . your_score($user);
-    echo "<BR>";
-    while($data = top_classement()->fetch()){
-        echo $data->pseudo_user;
-        echo $score,$data->score_total;
-    }
-} else {
-    echo "top 10";
-}
+header("Location: ../index.php?classement=10");
 ?>

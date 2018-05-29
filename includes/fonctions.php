@@ -50,6 +50,10 @@ function chk_score() {
     return isset($_SESSION['score']);
 }
 
+function chk_classement(){
+    return isset($_GET['classement']);
+}
+
 // imprime le classement dans la page classement
 function printHightScore($res){
     $tab = "";
