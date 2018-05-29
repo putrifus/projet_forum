@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+?>
 <head>
 
     <meta charset="utf-8">
@@ -40,19 +42,29 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Accueil</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="questionnaire.html">Questionnaire</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Questionnaire</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="classement.html">Classement</a>
                     </li>
+                    <!--
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.html">Liens</a>
                     </li>
+                    -->
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="seconnecter.html">Se connecter</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            <?php
+                                if (!(isset($_SESSION['login']))){
+                                    echo("href=\"index.php?conn=1\">Se connecter");
+                                } else {
+                                    echo("href=\"chkForm/deconnexion.php\">Se Déconnecter");
+                                }
+                            ?>    
+                        </a>
                     </li>
                 </ul>
             </div>

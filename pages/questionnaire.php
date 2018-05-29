@@ -55,7 +55,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="chkForm/classement.php">Classement</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.html">Liens</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="pub.php">Liens</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="chkForm/deconnexion.php">Se Déconnecter</a>
@@ -118,16 +118,6 @@ $numQuest = $_SESSION['numQuest'] - 1;
     <!-- Custom scripts for this template -->
     <script src="ressources/js/freelancer.min.js"></script>
 
-
-<?php
-function affich(){
-    if ($_GET['question'] <= 10) {
-        echo($quest->get_question($numQuest));
-    } else {
-        echo("Et Bim ton score : ".$quest->get_score());
-    }
-}
-?>
 </body>
 
 </html>
