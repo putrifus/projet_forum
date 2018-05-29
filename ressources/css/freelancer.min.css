@@ -409,6 +409,8 @@ a:hover {
 .questionnaire {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    align-items: center;
     padding: 5%;
     width: 100%;
 }
@@ -444,6 +446,9 @@ a:hover {
 
 .large {
     width: 49%;
+    min-width: 5em;
+    margin: auto;
+    align-items: center;
 }
 
 .caseFooter {
@@ -461,4 +466,20 @@ a:hover {
 #sendMessageButton,
 #connexion {
     margin: auto;
+}
+
+.imageflottanteQuestion {
+    margin: auto;
+    max-width: 25em;
+    max-height: 25em;
+}
+
+.imageQuestion {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.ligneVraiFaux {
+    width: 100%;
 }

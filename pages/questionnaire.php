@@ -77,7 +77,10 @@ $numQuest = $_SESSION['numQuest'] - 1;
                         } 
                 ?>
             </h3>
-            <div class="row">
+            <figure class="imageflottanteQuestion">
+                <img src="ressources/img/image-d3.png" class="imageQuestion" alt="Image question">
+            </figure>
+            <div class="row ligneVraiFaux">
                 <div class="col-lg-8 mx-auto">
                     <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php?>">
                         <br>
