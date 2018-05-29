@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Axel et Seb">
 
-    <title>Choix difficulté</title>
+    <title>Connexion</title>
 
   <!-- Bootstrap core CSS -->
   <link href="ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

@@ -10,7 +10,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="Axel et Seb">
 
-    <title>Choix difficulté</title>
+    <title>Liens utiles</title>
 
     <!-- Bootstrap core CSS -->
     <link href="ressources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
