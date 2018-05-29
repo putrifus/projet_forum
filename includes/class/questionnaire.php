@@ -16,15 +16,15 @@ class Questionnaire {
 
         // set le coef en foncton de la difficulté 
         switch ($diff) {
-            case "easy":
+            case 1:
                 $this->_coefAnswer = 1;
                 $this->_diff = "Facile";
                 break;
-            case "medium":
+            case 2:
                 $this->_coefAnswer = 2;
                 $this->_diff = "Moyen";
                 break;
-            case "hard":
+            case 3:
                 $this->_coefAnswer = 4;
                 $this->_diff = "Difficile";
                 break;

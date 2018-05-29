@@ -86,7 +86,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
             </figure>
             <div class="row ligneVraiFaux">
                 <div class="col-lg-8 mx-auto">
-                    <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php?>">
+                    <form name="questionnaire" id="questionnaire" novalidate="novalidate" method="post" action="chkForm/chk_reponse.php">
                         <br>
                         <div class="form-group vraiFaux">
                             <button type="submit" name="Vrai" value="Vrai" class="btn btn-xl btn-success large">VRAI</button>

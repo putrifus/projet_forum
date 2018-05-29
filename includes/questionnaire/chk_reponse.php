@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include ("../includes/class/questionnaire.php");
 
 // récupération des datas
@@ -10,13 +10,20 @@ $reponse = $quest->get_reponse($numQuest);
 
 // check bouton cliké
 if (isset($_POST['Vrai'])){
-    $rep = $_POST['Vrai'];
+    $repUtil = $_POST['Vrai'];
 } else if (isset($_POST['Faux'])){
-    $rep = $_POST['Faux'];
+    $repUtil = $_POST['Faux'];
+}
+
+// récupére la bonne réponse
+if ($quest->get_reponse($numQuest) == "1"){
+    $goodRep = "Vrai";
+} else {
+    $goodRep = "Faux";
 }
 
 // MAJ le score en fonction de la réponse
-$quest->verifAnswer( $rep,$quest->get_reponse($numQuest));
+$quest->verifAnswer($repUtil,$goodRep);
 
 // set la session questionnaire avec le score 
 $_SESSION['quest'] = serialize($quest); 
