@@ -66,9 +66,9 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container difficulte">
             <h2>Choix difficulté :</h2>
-            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=1" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnFacile">Facile</button></a><strong> ←1point</strong></p>
-            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=2" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnMoyen">Moyen</button></a><strong> →2points</strong></p>
-            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=3" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnDifficile">Difficile</button></a><strong> ↔4points</strong></p>
+            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=1" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnFacile">Facile</button></a><strong> (1 point par bonne réponse)</strong></p>
+            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=2" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnMoyen">Moyen</button></a><strong> (2 points par bonne réponse)</strong></p>
+            <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=3" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnDifficile">Difficile</button></a><strong> (4 points par bonne réponse)</strong></p>
             <h3>Texte Explication</h3>
         </div>
     </header>
