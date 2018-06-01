@@ -126,4 +126,13 @@ function setScoreTotal($pseudo){
     $req->execute(array(
         'pseudo' => $pseudo));
 }
+
+// 
+function getResultat($pseudo){
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT * FROM score WHERE pseudo_user = '".$pseudo."'");
+    $res->setFetchMode(PDO::FETCH_OBJ);
+    
+    return $res;
+}
 ?>

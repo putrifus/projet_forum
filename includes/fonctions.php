@@ -1,4 +1,7 @@
 <?php
+/* ----------------------------------------
+-----------     Fonctions PARSE    --------
+-----------------------------------------*/
 
 /* check session */
 function chk_sess_login(){
@@ -54,7 +57,11 @@ function chk_classement(){
     return isset($_GET['classement']);
 }
 
-// imprime le classement dans la page classement
+/* ----------------------------------------
+-----------     Fonctions PARSE    --------
+-----------------------------------------*/
+
+// Génère le code HTML pour le classement TOP
 function printHightScore($res){
     $tab = "";
     $cpt = 1;
@@ -65,7 +72,7 @@ function printHightScore($res){
     return $tab;
 }
 
-// imprime le classement dans la page classement
+// Génère le code HTML pour le classement de l'utilisateur
 function printClassementByUser($res){
     $pseudo = strtolower($_SESSION['login']);
     $classement = "";

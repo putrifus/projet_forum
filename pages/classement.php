@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php  
-    if (isset($_SESSION['diff'])){
-        switch ($_SESSION['diff']) {
-            case 1:
-                $totalPoint = 10;
-                break;
-            case 2:
-                $totalPoint = 20;
-                break;
-            case 3:
-                $totalPoint = 40;
-                break;
-        }
-    } else {
-        $totalPoint = 0;
-    }
+<?php 
+// si l'utilisateur est connecté crée l'objet resultat
+if (isset($_SESSION['login'])){
+    include ("includes/class/resultat.php"); 
+    $pseudo = $_SESSION['login'];
+    $resultat = new Resultat($pseudo);
+}
+
 ?>
 <head>
 
@@ -100,6 +92,21 @@
     <!-- Affichage du score si on arrive sur cette page après la fin d'un questionnaire -->
     <h4 class="text-center text-uppercase text-secondary mb-0 ">
         <?php  
+        if (isset($_SESSION['diff'])){
+            switch ($_SESSION['diff']) {
+                case 1:
+                    $totalPoint = 10;
+                    break;
+                case 2:
+                    $totalPoint = 20;
+                    break;
+                case 3:
+                    $totalPoint = 40;
+                    break;
+            }
+        } else {
+            $totalPoint = 0;
+        }
             if (isset($_SESSION['score'])){
             echo("Ton score : ".$_SESSION['score']." / ".$totalPoint); 
             // unset la session score pour retourner à la page du choix du questionnaire
@@ -121,15 +128,56 @@
                     <?php echo($_SESSION['classement']); ?>
                 </tbody>
             </table>
-            <br><br><br>
         </div>
-        <h4 class="text-center text-uppercase text-secondary mb-0 "><?php 
-            if (isset($_SESSION['classUser'])){
-                echo($_SESSION['classUser']); 
-                }
-            ?></h4>
+        <br><br><br>
 
-    </header>
+ <!-- Si l'utilisateur est connecté, affiche ses stats -->
+    <?php if (isset($_SESSION['classUser'])){ ?>
+
+        <h4 class="text-center text-uppercase text-secondary mb-0 ">
+            <?php 
+                if (isset($_SESSION['classUser'])){
+                    echo($_SESSION['classUser']); 
+                }
+            ?>
+        </h4>
+        <br><br><br>
+        <h5 class="text-center text-uppercase text-secondary mb-0 ">
+            Tes resultats
+        </h5>
+        <br>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Questionnaire</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><a href="chkForm/get_questionnaire.php?diff=1">Facile</a></th>
+                        <td><?php echo($resultat->get_scoreEasy()); ?> / 10</td>
+                    </tr>
+                    <tr>
+                        <th><a href="chkForm/get_questionnaire.php?diff=2">Moyen</a></th>
+                        <td><?php echo($resultat->get_scoreMedium()); ?> / 20</td>
+                    </tr>
+                    <tr>
+                        <th><a href="chkForm/get_questionnaire.php?diff=3">Difficile</a></th>
+                        <td><?php echo($resultat->get_scoreHard()); ?> / 40</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td><?php echo($resultat->get_scoreTotal()); ?> / 70</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    <?php } ?>
+     </header>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
