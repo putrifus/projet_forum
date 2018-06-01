@@ -42,6 +42,11 @@ $res = top_classement();
 
 $_SESSION['classement'] = printHightScore($res);
 
+//récupère les résultats de la requete sur le classement par utilisateur
+$res = classementByUser();
+//retourne le code html du classement user
+$_SESSION['classUser'] = printClassementByUser($res);
+
 // retournes à la page d'index avec le numéro de question suivante
 header('Location: ../index.php');
 ?>

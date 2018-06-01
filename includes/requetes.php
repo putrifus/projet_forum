@@ -94,6 +94,14 @@ function top_classement(){
     return $res;
 }
 
+function classementByUser(){
+    $conn = new Connect();
+    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC");
+    $res->setFetchMode(PDO::FETCH_OBJ);
+
+    return $res;
+}
+
 function your_score($user){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score WHERE pseudo_user = '".$user."'");

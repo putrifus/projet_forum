@@ -7,6 +7,7 @@ session_start();
 $res = top_classement();
 //retourne le code html du tableau de score
 $_SESSION['classement'] = printHightScore($res);
+
 //unset le questionnaire si il existe
 if(isset($_SESSION['quest'])){
     unset($_SESSION['quest']);

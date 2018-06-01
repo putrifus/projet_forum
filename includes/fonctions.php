@@ -64,3 +64,24 @@ function printHightScore($res){
     }
     return $tab;
 }
+
+// imprime le classement dans la page classement
+function printClassementByUser($res){
+    $pseudo = strtolower($_SESSION['login']);
+    $classement = "";
+    $cpt = 1;
+    while ($data = $res->fetch()) {
+        if ($cpt == 1){
+            $str = "er";
+        } else {
+            $str = "ème";
+        }
+        
+        if (strtolower($data->pseudo_user) == $pseudo){
+            $classement = "Pour le moment tu es ".$cpt.$str." avec ".$data->score_total." points";
+            break; 
+        }
+        $cpt++;
+    }
+    return $classement;
+}
