@@ -11,6 +11,9 @@ $_SESSION['quest'] = serialize($quest);
 // crée une session avec le numéro de la question
 $_SESSION['numQuest'] = 1;
 
+// crée une session avec la difficulté
+$_SESSION['diff'] = $_GET['diff'];
+
 // retournes à la page d'index avec le numéro de question en get
 $header = "Location: ../index.php";
 header($header);

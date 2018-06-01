@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php  
+    if (isset($_SESSION['diff'])){
+        switch ($_SESSION['diff']) {
+            case 1:
+                $totalPoint = 10;
+                break;
+            case 2:
+                $totalPoint = 20;
+                break;
+            case 3:
+                $totalPoint = 40;
+                break;
+        }
+    } else {
+        $totalPoint = 0;
+    }
+?>
 <head>
 
     <meta charset="utf-8">
@@ -85,7 +101,7 @@
     <h4 class="text-center text-uppercase text-secondary mb-0 ">
         <?php  
             if (isset($_SESSION['score'])){
-            echo("Ton score : ".$_SESSION['score']); 
+            echo("Ton score : ".$_SESSION['score']." / ".$totalPoint); 
             // unset la session score pour retourner à la page du choix du questionnaire
             unset($_SESSION['score']);
             }
