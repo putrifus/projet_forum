@@ -64,11 +64,11 @@
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
-        <div class="container">
+        <div class="container difficulte">
             <h2>Choix difficulté</h2>
-            <a href="chkForm/get_questionnaire.php?diff=1"><button type="button" class="btn btn-primary btn-lg">Facile</button></a>
-            <a href="chkForm/get_questionnaire.php?diff=2"><button type="button" class="btn btn-primary btn-lg">Moyen</button>
-            <a href="chkForm/get_questionnaire.php?diff=3"><button type="button" class="btn btn-primary btn-lg">Difficile</button>
+            <a href="chkForm/get_questionnaire.php?diff=1" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large">Facile</button></a>
+            <a href="chkForm/get_questionnaire.php?diff=2" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnMoyen">Moyen</button>
+            <a href="chkForm/get_questionnaire.php?diff=3" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnDifficile">Difficile</button>
         </div>
     </header>
 
