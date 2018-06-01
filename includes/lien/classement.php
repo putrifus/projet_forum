@@ -12,5 +12,14 @@ $_SESSION['classement'] = printHightScore($res);
 if(isset($_SESSION['quest'])){
     unset($_SESSION['quest']);
 }
+
+// si l'utilisateur est connecté récupère son classement
+if(isset($_SESSION['login'])){
+    //récupère les résultats de la requete sur le classement par utilisateur
+    $res = classementByUser();
+    //retourne le code html du classement user
+    $_SESSION['classUser'] = printClassementByUser($res);
+}
+
 header("Location: ../index.php?classement=10");
 ?>
