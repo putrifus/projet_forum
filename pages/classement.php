@@ -121,7 +121,14 @@
                     <?php echo($_SESSION['classement']); ?>
                 </tbody>
             </table>
+            <br><br><br>
         </div>
+        <div><?php 
+            if (isset($_SESSION['classUser'])){
+                echo($_SESSION['classUser']); 
+                }
+            ?></div>
+
     </header>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->

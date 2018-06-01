@@ -1,2 +1,3 @@
-UPDATE score SET score_medium = 20
- WHERE pseudo_user like('loic');
+SELECT pseudo_user
+    FROM score 
+    ORDER BY score_total DESC;
