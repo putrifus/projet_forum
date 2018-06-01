@@ -123,11 +123,11 @@
             </table>
             <br><br><br>
         </div>
-        <div><?php 
+        <h4 class="text-center text-uppercase text-secondary mb-0 "><?php 
             if (isset($_SESSION['classUser'])){
                 echo($_SESSION['classUser']); 
                 }
-            ?></div>
+            ?></h4>
 
     </header>
 

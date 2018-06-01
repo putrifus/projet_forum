@@ -497,14 +497,38 @@ a:hover {
     margin: auto;
 }
 
+#ligneDifficulte {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 #btnDifficulte {
     margin: 1%;
 }
 
+.btnFacile:hover {
+    background-color: #5cb915;
+    border-color: #5cb915;
+}
+
 .btnMoyen {
     background-color: darkorange;
+    border-color: darkorange;
+}
+
+.btnMoyen:hover {
+    background-color: orange;
+    border-color: orange;
 }
 
 .btnDifficile {
     background-color: red;
+    border-color: red;
+}
+
+.btnDifficile:hover {
+    background-color: rgb(233, 75, 75);
+    border-color: rgb(233, 75, 75);
+    ;
 }
