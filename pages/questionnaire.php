@@ -3,7 +3,6 @@
 <?php include ("includes/class/questionnaire.php"); 
 $quest = unserialize($_SESSION['quest']); 
 $numQuest = $_SESSION['numQuest'] - 1;
-
 ?>
 <head>
 
