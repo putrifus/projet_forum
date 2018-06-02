@@ -1,12 +1,15 @@
 <?php
+/* ----------------------------------------
+-----------     Fonctions PARSE    --------
+-----------------------------------------*/
 
 /* check session */
 function chk_sess_login(){
     return isset($_SESSION['login']);
 }
 
-/* Erreur pseudo utilisé */
-function chk_error() {
+/* Erreur pseudo/mail utilisé */
+function chk_error_pseudo() {
     if (isset($_GET['pseudo'])){
         if ($_GET['pseudo']=='error'){
             return true;
@@ -18,9 +21,9 @@ function chk_error() {
     }
 }
 
-function chk_insulte(){
-    if (isset($_GET['pseudo'])){
-        if ($_GET['pseudo']=='insulte'){
+function chk_error_mail() {
+    if (isset($_GET['mail'])){
+        if ($_GET['mail']=='error'){
             return true;
         } else {
             return false;
@@ -40,21 +43,52 @@ function chk_conn() {
     return isset($_GET['conn']);
 }
 
-function chk_insultes($pseudo,$nom,$email,$prenom){
-    //tableau de mots proscrits
-    $array_insultes=array("con","cul","merde","fuck","batard","connard","connasse","encule","pute","putain","petasse","negro","bougnoule");
+// check si l'utilisateur a choisi ue difficulté
+function chk_quest() {
+    return isset($_SESSION['quest']);
+}
 
-    //insertion des données dans un tableau pour faire le comparatif
-    $array_entree=array($pseudo,$nom,$email,$prenom);
+// check si l'utilisateur a fini le questionnaire
+function chk_score() {
+    return isset($_SESSION['score']);
+}
 
-    //on boucle sur la chaine d'entrée pour comparer les mots, si une insultes est présente on retourne false sinon true
-    for($i=0;$i<sizeof($array_entree);$i++) {
-        if(in_array(trim(strtolower($array_entree[$i])),$array_insultes)){
-            return false;
+function chk_classement(){
+    return isset($_GET['classement']);
+}
+
+/* ----------------------------------------
+-----------     Fonctions PARSE    --------
+-----------------------------------------*/
+
+// Génère le code HTML pour le classement TOP
+function printHightScore($res){
+    $tab = "";
+    $cpt = 1;
+    while ($data = $res->fetch()) {
+        $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        $cpt++;
+    }
+    return $tab;
+}
+
+// Génère le code HTML pour le classement de l'utilisateur
+function printClassementByUser($res){
+    $pseudo = strtolower($_SESSION['login']);
+    $classement = "";
+    $cpt = 1;
+    while ($data = $res->fetch()) {
+        if ($cpt == 1){
+            $str = "er";
+        } else {
+            $str = "ème";
         }
-        else{
-            return true;
-        } 
-    } 
-
+        
+        if (strtolower($data->pseudo_user) == $pseudo){
+            $classement = "Pour le moment tu es ".$cpt.$str." avec ".$data->score_total." points";
+            break; 
+        }
+        $cpt++;
+    }
+    return $classement;
 }

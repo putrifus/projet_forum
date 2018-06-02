@@ -2,25 +2,38 @@
 session_start();
 include("includes/fonctions.php");
 
-
 if (!(chk_sess_login())) {
     if(!(chk_conn())){
-        include("pages/inscr.php");
-        if(chk_error()){
-            echo "pseudo utilisé";
+        if(chk_classement()) {
+            include ("pages/classement.php");
         }
-        if(chk_insulte()){
-            echo "Veuillez utiliser des mots corrects svp";}
+        else {
+            include("pages/inscr.php");
+            if(chk_error_pseudo()){
+                echo "pseudo utilisé";
+            } if(chk_error_mail()){
+                echo "mail utilisé";
+            }
+        }
     } else {
         include("pages/seconnecter.php");
-    }
-
-} else {
-    if (!(chk_diff())){
+    } 
+} 
+else {
+    if (!(chk_diff()) && !(chk_quest()) && !(chk_score()) && !(chk_classement())){
         include("pages/difficulte.php");
-    } else {
-        /* lien à modifier pour arrivr a la page questionnaire*/
-        include("pages/questionnaire.php");
+    } 
+    else {
+        if (chk_quest() && !(chk_score())){
+            if(chk_classement()) {
+                include("pages/classement.php");
+            } else {
+                include("pages/questionnaire.php");
+            }
+        } else {
+            include("pages/classement.php");
+        }
+        
     }
 }
 ?>
