@@ -1,5 +1,6 @@
 <?php
 include ("../includes/requetes.php");
+include ("../includes/fonctions.php");
 session_start();
 
 // parse les entrées de l'utilisateur
@@ -12,6 +13,13 @@ if (isset($_POST['nom'])){
     $trancheAge = $_POST['trancheAge'];
     $pseudo = htmlspecialchars($_POST['pseudo_inscr']);
     $mdp = password_hash($_POST['mdp_inscr'],PASSWORD_DEFAULT);
+
+    $insulte_or_not=chk_insultes($pseudo,$nom,$email,$prenom);
+
+    if($insulte_or_not==false){
+        header('Location: ../index.php?pseudo=insulte');
+    }
+    else{
 
     // si l'utilisateur existe
     if (pseudoExist($pseudo)){
@@ -37,6 +45,7 @@ if (isset($_POST['nom'])){
     header('Location: ../index.php');
         
     
+}
 }
 else {
     
