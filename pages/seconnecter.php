@@ -66,9 +66,11 @@
     <section id="contact">
         <div class="container seconnecter">
         <!-- debut boite rouge -->
-        <div class="alert alert-danger" role="alert">
-            Pseudo ou mdp incorrect
-        </div>
+        <?php 
+            if (isset($_SESSION['error'])){
+            echo("<div class=\"alert alert-danger\" role=\"alert\">".$_SESSION['error']."</div>");
+            }
+        ?>
         <!-- fin boite rouge -->
             <form name="sentMessage" method="post" action="chkForm/conn_user.php">
             <!-- id="contactForm" -->
@@ -91,8 +93,6 @@
                     <button type="submit" class="btn btn-primary btn-xl" id="connexion">Connexion</button>
                 </div>
             </form>
-            <?php if (isset($_SESSION['error'])){
-                echo $_SESSION['error'];
-                }?>
+            
         </div>
     </section>

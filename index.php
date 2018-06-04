@@ -9,13 +9,6 @@ if (!(chk_sess_login())) {
         }
         else {
             include("pages/inscr.php");
-            if(chk_error_pseudo()){
-                echo "pseudo utilisé";                
-            } if(chk_error_mail()){
-                echo "mail utilisé";
-            }
-            if(chk_insulte()){
-                echo "Veuillez utiliser des mots corrects svp";}
         }
     } else {
         include("pages/seconnecter.php");

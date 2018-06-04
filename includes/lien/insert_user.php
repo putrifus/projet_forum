@@ -14,22 +14,26 @@ if (isset($_POST['nom'])){
     $pseudo = htmlspecialchars($_POST['pseudo_inscr']);
     $mdp = password_hash($_POST['mdp_inscr'],PASSWORD_DEFAULT);
 
+    
+    // s'il y'a des insultes dans le pseudo, nom, email et prénom
     $insulte_or_not=chk_insultes($pseudo,$nom,$email,$prenom);
-
     if($insulte_or_not==false){
-        header('Location: ../index.php?pseudo=insulte');
+        $_SESSION['error'] = "Veuillez utiliser des mots corrects svp";
+        header('Location: ../index.php');
+        die();
     }
-    else{
 
     // si l'utilisateur existe
     if (pseudoExist($pseudo)){
-        header('Location: ../index.php?pseudo=error');
+        $_SESSION['error'] = "Le pseudo est déjà utilisé";
+        header('Location: ../index.php');
         die();
     }
     
     // si l'utilisateur existe
     if (userExist($email)){
-        header('Location: ../index.php?mail=error');
+        $_SESSION['error'] = "L'utilisateur existe déjà";
+        header('Location: ../index.php');
         die();
     }
 
@@ -40,12 +44,19 @@ if (isset($_POST['nom'])){
 
     // Set la session pour aller à la page de choix de difficulté
     $_SESSION['login'] = $pseudo;
+
+    // Unset la session error si elle existe
+    if (isset($_SESSION['error'])){
+        unset($_SESSION['error']);
+    }
+       
+    
     
     // Boucle sur l'index vers page du choix de difficulté du questionnaire
     header('Location: ../index.php');
         
     
-}
+
 }
 else {
     

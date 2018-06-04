@@ -80,6 +80,13 @@
     <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">Renseignez le formulaire pour jouer</h2>
       <hr class="star-dark mb-5">
+      <!-- debut boite rouge -->
+      <?php 
+         if (isset($_SESSION['error'])){
+           echo("<div class=\"alert alert-danger\" role=\"alert\">".$_SESSION['error']."</div>");
+         }
+      ?>
+        
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -130,7 +137,7 @@
                 <input type="radio" name="trancheAge" value='-18'>- 18 ans</label>
               &nbsp;&nbsp;&nbsp;&nbsp;
               <label class="radio-inline">
-                <input type="radio" name="trancheAge" value='18-25'>18-25 ans</label>
+                <input type="radio" name="trancheAge" value='18-25'  checked>18-25 ans</label>
               &nbsp;&nbsp;&nbsp;&nbsp;
               <label class="radio-inline">
                 <input type="radio" name="trancheAge" value='+25'>+ 25 ans</label>
