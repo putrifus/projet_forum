@@ -39,7 +39,6 @@ $_SESSION['score'] = $score;
 $res = top_classement();
 
 // génére le code html pour l'affichage du classement et la met en session
-
 $_SESSION['classement'] = printHightScore($res);
 
 //récupère les résultats de la requete sur le classement par utilisateur

@@ -94,6 +94,7 @@ function top_classement(){
     return $res;
 }
 
+// récupère les scores et user triés par score
 function classementByUser(){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC");
@@ -112,6 +113,7 @@ function your_score($user){
     return $score;
 }
 
+// entre le score du quizz qui vient d'être joué
 function setScoreDiff($score,$pseudo,$coldiff){
     $conn = new Connect();
     $req = $conn->get_connexion()->prepare("UPDATE score SET ".$coldiff." = :score WHERE pseudo_user = :pseudo");
@@ -120,6 +122,7 @@ function setScoreDiff($score,$pseudo,$coldiff){
         'pseudo' => $pseudo));
 }
 
+// Calcul du score total
 function setScoreTotal($pseudo){
     $conn = new Connect();
     $req = $conn->get_connexion()->prepare("UPDATE score SET score_total = (score_easy + score_medium + score_hard) WHERE pseudo_user = :pseudo");
@@ -127,7 +130,7 @@ function setScoreTotal($pseudo){
         'pseudo' => $pseudo));
 }
 
-// 
+// Récupère tous les scores pour l'objet Resultat
 function getResultat($pseudo){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT * FROM score WHERE pseudo_user = '".$pseudo."'");

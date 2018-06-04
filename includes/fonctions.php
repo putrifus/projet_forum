@@ -115,17 +115,30 @@ function printClassementByUser($res){
     $pseudo = strtolower($_SESSION['login']);
     $classement = "";
     $cpt = 1;
+    $scorePrec = 0;
+    $position = 1 ;
+
     while ($data = $res->fetch()) {
-        if ($cpt == 1){
+    // si le score correspond au score précédent
+        if ($data->score_total != $scorePrec) {
+            $position = $cpt;
+        }
+
+        // gère l'affichage s'il est premier ou autre 
+        if ($position == 1){
             $str = "er";
         } else {
             $str = "ème";
         }
+
         
+        // si le pseudo correspond affiche le score et break la boucle
         if (strtolower($data->pseudo_user) == $pseudo){
-            $classement = "Pour le moment tu es ".$cpt.$str." avec ".$data->score_total." points";
-            break; 
+            $classement = "Pour le moment tu es ".$position.$str." avec ".$data->score_total." points";
+            break;   
         }
+
+        $scorePrec = $data->score_total;
         $cpt++;
     }
     return $classement;
