@@ -85,6 +85,9 @@
                     <button type="submit" class="btn btn-primary btn-xl" id="connexion">Connexion</button>
                 </div>
             </form>
+            <?php if (isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                }?>
         </div>
     </section>
 

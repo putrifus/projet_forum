@@ -48,7 +48,7 @@ function chk_insulte(){
 
 function chk_insultes($pseudo,$nom,$email,$prenom){
     //tableau de mots proscrits
-    $array_insultes=array("con","cul","merde","fuck","batard","connard","connasse","encule","pute","putain","petasse","negro","bougnoule");
+    $array_insultes=array("con","cul","merde","fuck","batard","connard","connasse","encule","pute","putain","petasse","negro","bougnoule","cretin","idiot","fumier");
 
     //insertion des données dans un tableau pour faire le comparatif
     $array_entree=array($pseudo,$nom,$email,$prenom);
