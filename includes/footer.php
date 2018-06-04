@@ -4,9 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 caseFooter">
-                    <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/adefi_final.png" alt="">
-                    <p class="lead mb-0">Description ADEFI <br>
-                        <a href="https://www.adefi-ml.com/">lien ADEFI</a>.</p>
+                    <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/adefi_final.png" alt="">                 
+                     
+                        <a href="https://www.adefi-ml.com/">lien ADEFI</a>
                 </div>
                 <div class="col-md-4 mb-5 mb-lg-0 caseFooter">
                     <h4 class="text-uppercase mb-4">Suivre l'AFPA</h4>
