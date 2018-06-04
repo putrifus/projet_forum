@@ -9,7 +9,7 @@ $numQuest = $_SESSION['numQuest'] - 1;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Axel et Seb">
+    <meta name="author" content="CrewStiant">
 
     <title>Questionnaire AFPA</title>
 
