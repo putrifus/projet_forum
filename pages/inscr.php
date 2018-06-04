@@ -66,7 +66,7 @@
   <!-- Header -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container">
-      <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/profile.png" alt="">
+      <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/profile_quizz.png" alt="">
       <!--  -->
       <h1 class="text-uppercase mb-0">Bienvenue sur notre formulaire</h1>
       <hr class="star-light">
