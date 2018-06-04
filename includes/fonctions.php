@@ -90,15 +90,21 @@ function chk_classement(){
 }
 
 /* ----------------------------------------
------------     Fonctions PARSE    --------
+--     Fonctions pour le classement   -----
 -----------------------------------------*/
 
 // Génère le code HTML pour le classement TOP
 function printHightScore($res){
     $tab = "";
     $cpt = 1;
+    $scorePrec = 0;
     while ($data = $res->fetch()) {
-        $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        if ($data->score_total != $scorePrec) {
+            $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        } else {
+            $tab .= "<tr><td>.</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        }
+        $scorePrec =$data->score_total;
         $cpt++;
     }
     return $tab;
