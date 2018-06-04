@@ -48,7 +48,7 @@ function chk_insulte(){
 
 function chk_insultes($pseudo,$nom,$email,$prenom){
     //tableau de mots proscrits
-    $array_insultes=array("con","cul","merde","fuck","batard","connard","connasse","encule","pute","putain","petasse","negro","bougnoule");
+    $array_insultes=array("con","cul","merde","fuck","batard","connard","connasse","encule","pute","putain","petasse","negro","bougnoule","cretin","idiot","fumier");
 
     //insertion des données dans un tableau pour faire le comparatif
     $array_entree=array($pseudo,$nom,$email,$prenom);
@@ -90,15 +90,21 @@ function chk_classement(){
 }
 
 /* ----------------------------------------
------------     Fonctions PARSE    --------
+--     Fonctions pour le classement   -----
 -----------------------------------------*/
 
 // Génère le code HTML pour le classement TOP
 function printHightScore($res){
     $tab = "";
     $cpt = 1;
+    $scorePrec = 0;
     while ($data = $res->fetch()) {
-        $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        if ($data->score_total != $scorePrec) {
+            $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        } else {
+            $tab .= "<tr><td>.</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        }
+        $scorePrec =$data->score_total;
         $cpt++;
     }
     return $tab;
@@ -109,17 +115,30 @@ function printClassementByUser($res){
     $pseudo = strtolower($_SESSION['login']);
     $classement = "";
     $cpt = 1;
+    $scorePrec = 0;
+    $position = 1 ;
+
     while ($data = $res->fetch()) {
-        if ($cpt == 1){
+    // si le score correspond au score précédent
+        if ($data->score_total != $scorePrec) {
+            $position = $cpt;
+        }
+
+        // gère l'affichage s'il est premier ou autre 
+        if ($position == 1){
             $str = "er";
         } else {
             $str = "ème";
         }
+
         
+        // si le pseudo correspond affiche le score et break la boucle
         if (strtolower($data->pseudo_user) == $pseudo){
-            $classement = "Pour le moment tu es ".$cpt.$str." avec ".$data->score_total." points";
-            break; 
+            $classement = "Pour le moment tu es ".$position.$str." avec ".$data->score_total." points";
+            break;   
         }
+
+        $scorePrec = $data->score_total;
         $cpt++;
     }
     return $classement;

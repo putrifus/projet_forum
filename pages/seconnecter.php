@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Axel et Seb">
+    <meta name="author" content="CrewStiant">
 
     <title>Connexion</title>
 
@@ -17,6 +17,7 @@
   <link href="ressources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image" href="ressources/img/Flav_Quizz.png">
 
   <!-- Plugin CSS -->
   <link href="ressources/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
@@ -90,5 +91,8 @@
                     <button type="submit" class="btn btn-primary btn-xl" id="connexion">Connexion</button>
                 </div>
             </form>
+            <?php if (isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                }?>
         </div>
     </section>
