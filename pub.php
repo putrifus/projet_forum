@@ -79,17 +79,20 @@ session_start();
                 <img class="card-img-top" src="ressources/img/declic.jpg" alt="image Declic">
                 <div class="card-body">
                     <h5 class="card-title">Declic</h5>
-                    <p class="card-text">description</p>
-                    <a href="#" class="card-link">lien</a>
+                    <p class="card-text">Vous avez entre 18 et 25 ans et vous êtes en recherche d'emploi ?
+                                        Vous souhaitez essayer un nouveau métier ou en découvrir de nouveaux ?
+                                        Vous souhaitez conforter votre projet professionnel avant de vous engager dans un parcours de formation ou chercher un emploi ?
+                                        Le programme DECLIC POUR L'ACTION vous permet, dans votre centre Afpa de proximité, de tester des métiers grandeur nature, de réfléchir à votre projet professionnel et de gagner en confiance.</p>
+                    <a href="https://www.afpa.fr/actualites/declic-pour-l-action" class="card-link">Je découvre Declic</a>
                 </div>
             </div>
             <br>
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="ressources/img/metis.jpg" alt="image Metisse">
                 <div class="card-body">
-                    <h5 class="card-title">Metisse</h5>
-                    <p class="card-text">description</p>
-                    <a href="#" class="card-link">lien</a>
+                    <h5 class="card-title">Métis</h5>
+                    <p class="card-text">Pierre angulaire de la digitalisation de l’Afpa, Métis est une  plateforme nationale, reliée au système d’information de l’Afpa. Elle intègre les guides formateurs, les livrets stagiaires et toutes les ressources pédagogiques mises à disposition par la Direction de l’ingénierie et de l’Innovation Pédagogique de l’Afpa</p>
+                    <a href="https://www.afpa.fr/espace-presse/l-afpa-accelere-sa-transformation-digitale" class="card-link">Je découvre Métis</a>
                 </div>
             </div>
             <br>
