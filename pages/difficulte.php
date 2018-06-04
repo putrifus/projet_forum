@@ -69,32 +69,6 @@
             <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=1" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnFacile">Facile</button></a><strong> (1 point par bonne réponse)</strong></p>
             <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=2" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnMoyen">Moyen</button></a><strong> (2 points par bonne réponse)</strong></p>
             <p id=ligneDifficulte><a href="chkForm/get_questionnaire.php?diff=3" id=btnDifficulte><button type="button" class="btn btn-primary btn-lg large btnDifficile">Difficile</button></a><strong> (4 points par bonne réponse)</strong></p>
-            <h3>Texte Explication</h3>
+            <h3>Répondez à 10 questions par questionnaire</h3>
         </div>
     </header>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="ressources/vendor/jquery/jquery.min.js"></script>
-    <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="ressources/js/jqBootstrapValidation.js"></script>
-    <script src="ressources/js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="ressources/js/freelancer.min.js"></script>
-
-</body>
-
-</html>

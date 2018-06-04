@@ -64,6 +64,11 @@
     <!-- Header -->
     <section id="contact">
         <div class="container seconnecter">
+        <!-- debut boite rouge -->
+        <div class="alert alert-danger" role="alert">
+            Pseudo ou mdp incorrect
+        </div>
+        <!-- fin boite rouge -->
             <form name="sentMessage" method="post" action="chkForm/conn_user.php">
             <!-- id="contactForm" -->
                 <div class="control-group">
@@ -87,29 +92,3 @@
             </form>
         </div>
     </section>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="ressources/vendor/jquery/jquery.min.js"></script>
-    <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="ressources/js/jqBootstrapValidation.js"></script>
-    <script src="ressources/js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="ressources/js/freelancer.min.js"></script>
-
-</body>
-
-</html>

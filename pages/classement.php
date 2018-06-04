@@ -89,6 +89,17 @@ if (isset($_SESSION['login'])){
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
 
+        <?php if (isset($_SESSION['classUser'])){ ?>
+
+        <h4 class="text-center text-uppercase text-secondary mb-0 ">
+        <?php 
+            if (isset($_SESSION['classUser'])){
+                echo($_SESSION['classUser']); 
+            }
+        ?>
+        </h4>
+        <?php }?>
+
     <!-- Affichage du score si on arrive sur cette page après la fin d'un questionnaire -->
     <h4 class="text-center text-uppercase text-secondary mb-0 ">
         <?php  
@@ -134,18 +145,10 @@ if (isset($_SESSION['login'])){
  <!-- Si l'utilisateur est connecté, affiche ses stats -->
     <?php if (isset($_SESSION['classUser'])){ ?>
 
-        <h4 class="text-center text-uppercase text-secondary mb-0 ">
-            <?php 
-                if (isset($_SESSION['classUser'])){
-                    echo($_SESSION['classUser']); 
-                }
-            ?>
-        </h4>
-        <br><br><br>
         <h5 class="text-center text-uppercase text-secondary mb-0 ">
             Tes resultats
         </h5>
-        <br>
+        </br>
         <div class="container">
             <table class="table table-striped">
                 <thead>
@@ -176,31 +179,6 @@ if (isset($_SESSION['login'])){
                 </tfoot>
             </table>
         </div>
+        <h5 class="text-center text-uppercase text-secondary mb-0 ">Cliquez sur un niveau de difficulté pour tenter d'améliorer votre score<br/>Attention : Votre score actuel sera remplacé par le nouveau</h5>
     <?php } ?>
      </header>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="ressources/vendor/jquery/jquery.min.js"></script>
-    <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="ressources/js/jqBootstrapValidation.js"></script>
-    <script src="ressources/js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="ressources/js/freelancer.min.js"></script>
-
-</body>
-
-</html>
