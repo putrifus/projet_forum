@@ -1,5 +1,6 @@
 <?php
-include ("../includes/requetes.php");
+include ("../includes/requetes_admin.php");
+include ("../includes/fonctions.php");
 session_start();
 
 // parse les entrées de l'utilisateur
@@ -32,7 +33,9 @@ else {
     }
     else {
         /* set la session */
-        $_SESSION['login'] = $_POST['pseudo_conn'];
+        $_SESSION['admin'] = $_POST['pseudo_conn'];
+        $res = getallUser();
+        $_SESSION['utilisateurs'] = print_alluser($res);
         if(isset($_SESSION['error'])){
             unset($_SESSION['error']);
         }
