@@ -9,5 +9,5 @@ if(isset($_SESSION['admin'])){
     include("includes/co_admin.php");
 }
 
-//Dh2Jd0wC9J
+//password admin a modif : id:admin password:Dh2Jd0wC9J
 ?>
