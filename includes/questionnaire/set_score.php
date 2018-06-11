@@ -35,14 +35,14 @@ unset($_SESSION['quest']);
 // set une session avec le score de la partie qui vient d'être jouée
 $_SESSION['score'] = $score;
 
-// récupère le tableau des hightscore
-$res = top_classement();
+// récupère le classement
+$res = classement();
 
 // génére le code html pour l'affichage du classement et la met en session
 $_SESSION['classement'] = printHightScore($res);
 
 //récupère les résultats de la requete sur le classement par utilisateur
-$res = classementByUser();
+$res = classement();
 //retourne le code html du classement user
 $_SESSION['classUser'] = printClassementByUser($res);
 

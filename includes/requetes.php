@@ -86,16 +86,8 @@ return $quest;
 $res->closeCursor();
 }
 
-function top_classement(){
-    $conn = new Connect();
-    $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC LIMIT 10");
-    $res->setFetchMode(PDO::FETCH_OBJ);
-
-    return $res;
-}
-
 // récupère les scores et user triés par score
-function classementByUser(){
+function classement(){
     $conn = new Connect();
     $res = $conn->get_connexion()->query("SELECT pseudo_user, score_total FROM score ORDER BY score_total DESC");
     $res->setFetchMode(PDO::FETCH_OBJ);

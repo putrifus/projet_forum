@@ -99,13 +99,18 @@ function printHightScore($res){
     $cpt = 1;
     $scorePrec = 0;
     while ($data = $res->fetch()) {
-        if ($data->score_total != $scorePrec) {
-            $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+        // conditions pour afficher les 10 premiers, même s'il y'a des égalités
+        if ($cpt <= 10 || $cpt > 10 && $data->score_total == $scorePrec) {
+            if ($data->score_total != $scorePrec) {
+                $tab .= "<tr><td>".$cpt."</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+            } else {
+                $tab .= "<tr><td>.</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+            }
+            $scorePrec =$data->score_total;
+            $cpt++;
         } else {
-            $tab .= "<tr><td>.</td><td>".$data->pseudo_user."</td><td>".$data->score_total."</td></tr>";
+            break;
         }
-        $scorePrec =$data->score_total;
-        $cpt++;
     }
     return $tab;
 }
