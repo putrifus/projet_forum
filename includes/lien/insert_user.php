@@ -61,6 +61,6 @@ if (isset($_POST['nom'])){
 else {
     
     /*revient sur la page d'accueil*/
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 ?>
