@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 12 juin 2018 à 06:42
+-- Généré le :  mar. 12 juin 2018 à 11:20
 -- Version du serveur :  5.7.19-log
 -- Version de PHP :  7.1.9
 
@@ -33,16 +33,18 @@ USE `forum`;
 
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mdp` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `administrateur`
 --
 
-INSERT INTO `administrateur` (`pseudo`, `mdp`) VALUES
-('admin', '$2y$10$f1XJdsLSLnbUJ5/vdraQQOd1x3m6LMKMPOQuwtYVlDwG0tt2pgCDC');
+INSERT INTO `administrateur` (`id`, `pseudo`, `mdp`) VALUES
+(1, 'Admin', '$2y$10$yqw6AJaE6pZ.Gx898Th/T.XtFQMju7AvbspLKQIXoXHI5yXxCED2u');
 
 -- --------------------------------------------------------
 
