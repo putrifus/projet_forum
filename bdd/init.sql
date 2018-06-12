@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 29 mai 2018 à 20:04
--- Version du serveur :  5.7.21-log
+-- Généré le :  mar. 12 juin 2018 à 06:42
+-- Version du serveur :  5.7.19-log
 -- Version de PHP :  7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 DROP DATABASE IF EXISTS `forum`;
 CREATE DATABASE IF NOT EXISTS `forum` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `forum`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `administrateur`
+--
+
+DROP TABLE IF EXISTS `administrateur`;
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `pseudo` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `administrateur`
+--
+
+INSERT INTO `administrateur` (`pseudo`, `mdp`) VALUES
+('admin', '$2y$10$f1XJdsLSLnbUJ5/vdraQQOd1x3m6LMKMPOQuwtYVlDwG0tt2pgCDC');
 
 -- --------------------------------------------------------
 
@@ -173,24 +192,29 @@ CREATE TABLE IF NOT EXISTS `score` (
   `score_total` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_score_to_util` (`pseudo_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `score`
 --
 
 INSERT INTO `score` (`id`, `pseudo_user`, `score_easy`, `score_medium`, `score_hard`, `score_total`) VALUES
-(1, 'Yoyanne', 5, 16, 24, 45),
-(2, 'Julien', 5, 4, 12, 21),
-(3, 'Axel', 5, 16, 20, 41),
-(4, 'Loic', 3, 10, 28, 41),
-(5, 'Benoit', 5, 2, 16, 23),
-(6, 'Franck', 3, 16, 8, 27),
-(7, 'Sebastien', 9, 12, 16, 37),
-(8, 'Christophe', 4, 12, 28, 44),
-(9, 'LilWhoreStier', 4, 8, 24, 36),
-(10, 'CalviStier', 4, 10, 24, 38),
-(11, 'CrewStiant', 2, 20, 28, 50);
+(1, 'CrewStiant', 10, 10, 36, 56),
+(2, 'Thor', 10, 20, 36, 66),
+(3, 'Phoenix 2048', 10, 18, 36, 64),
+(4, 'TheBrat', 10, 20, 32, 62),
+(5, 'BlueStier', 10, 20, 40, 70),
+(6, 'WAYLANDER ', 10, 20, 28, 58),
+(7, 'Korgo', 8, 18, 32, 58),
+(8, 'la_banane', 10, 20, 40, 70),
+(9, 'Mat', 9, 18, 32, 59),
+(10, 'Sham', 7, 0, 0, 7),
+(11, 'Coralie', 10, 16, 20, 46),
+(12, 'Nico', 10, 20, 28, 58),
+(13, 'Rémi ', 8, 18, 36, 58),
+(14, 'Scozor', 8, 18, 28, 58),
+(15, 'Malanthe', 9, 18, 24, 51),
+(16, 'Mackfly', 9, 0, 0, 9);
 
 -- --------------------------------------------------------
 
@@ -209,24 +233,29 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `email`, `nom`, `prenom`, `tranche_d_age`, `pseudo`, `mdp`) VALUES
-(1, 'yohann.demora@gmail.com', 'Demora', 'Yohann', '+25', 'Yoyanne', '$2y$10$EHPe9b78.yCkl6cbxNUePuf4rj4/ICzLqNvdcv5w9jVaK8NlnJz42'),
-(2, 'benmonmail@hhuuu.fou', 'Dequidt', 'Julien', '18-25', 'Julien', '$2y$10$dswwo8f3A9qcjU9f4zk0Uehq9Z.jeuQQ0KD/SEe02nWadlf5wL42a'),
-(3, 'axel@axel.fr', 'Ledieu', 'Axel', '18-25', 'Axel', '$2y$10$sRvBdM7Wd01lObyS9f/YzurxFzs6sevPEBKcYzFwKLbW55xYydYOm'),
-(4, 'loic@loic.fr', 'Roussel', 'Loic', '+25', 'Loic', '$2y$10$iyvdE7sZHPUTrB14l27hLuNyqNoIbJXf4Ao2450I6u1hNDW2nlPXm'),
-(5, 'ben@ben.fr', 'Poux', 'Benoit', '+25', 'Benoit', '$2y$10$9TAS2vNzshofD499WHFPHOReDyhmJ43zJApZS7Uw.CENuykXTzR26'),
-(6, 'franck@franck.fr', 'Nouvion', 'Franck', '18-25', 'Franck', '$2y$10$RvjAjla3NXMGGiTC.2ajNOgI2axbP/6YbGH/V5K.1yJMAvZ1obp1e'),
-(7, 'seb@seb.fr', 'DeGouy', 'Sebastien', '+25', 'Sebastien', '$2y$10$A5jBAi.1f4Wo282Qj8JRLOVwjfAqMCQYv7rmTJTcRQ7nvTnfwNzWq'),
-(8, 'chris@chris.fr', 'Carsalade', 'Christophe', '+25', 'Christophe', '$2y$10$gO286Mp8yPh4Naj9L7mQfOJxLtDVo7DTTFy.kH/oXRmrX86Pokh3S'),
-(9, 'lilwhore@gmail.com', 'Stiant', 'Crew', '18-25', 'LilWhoreStier', '$2y$10$LGsGxO0s4RJ0FmC2nL19zusM9TQn1Ne4hxPxRiNqzb6Xg/B0KuZQG'),
-(10, 'calvi@crewstiant.fr', 'Stiant', 'Crew', '18-25', 'CalviStier', '$2y$10$2VGR1SOeuOCfh7h8JMWGU.dg8DP1M1QlFR3o3F4050AjyNVF/ZpO2'),
-(11, 'stiant@crewstiant.fr', 'Stiant', 'Crew', '18-25', 'CrewStiant', '$2y$10$TpS/9SwAKPxgKQDRL.xhTeIwy0M0fDVmCHyNPkAr/pzqssQ5C4KKC');
+(1, 'crew@crewstiant.tk', 'Crew', 'Stiant', '+25', 'CrewStiant', '$2y$10$8rXEUi92xN/8FR58NhbLGerRgJmpRyHS.fb6g59W3fafd5.rnAqCO'),
+(2, 'gerardjohann@hotmail.fr', 'G', 'J', '+25', 'Thor', '$2y$10$dPlRN8bfoXd1lt31dbnx5O1mu2Qvr5YdniZ4P3btxPUbxbAyD52Ce'),
+(3, 'frederic.lequien@gmail.com', 'Lequien', 'Frederic', '+25', 'Phoenix 2048', '$2y$10$zY1J0uJCagEgeKkR.yyO..QlyHqsEZ82N3cYYo1tknCI7M86ax8Ce'),
+(4, 'sam.jah2@gmail.com', 'Phil', 'Helmut', '+25', 'TheBrat', '$2y$10$qxnVA.gWLIfJiglC92Adk.TBXXLt1cg/90LZzeW1l2MB.571gjMfi'),
+(5, 'lroussel2703@gmail.com', 'Roussel', 'Loic', '+25', 'BlueStier', '$2y$10$m7CJi.h2uvgdZTaKdx8rquYYkNafZKl6RgmA6mlUaszky7pwEP08O'),
+(6, 'beckflann@gmail.com', 'Carsalade ', 'Christophe ', '+25', 'WAYLANDER ', '$2y$10$2sXD1u.FMAgIKn0QBV9Zhuy/KqtZHVf6guWTytYnvPTtkum967Eee'),
+(7, 'C.catillon59@gmail.com', 'catillon', 'christophe', '+25', 'Korgo', '$2y$10$flyewBZTOShPhTsXhwVzBekppYkmGplGoykZZ0gnRaq8yyvkeYxfG'),
+(8, 'julien.dequidt@lilo.org', 'Dequidt', 'Julien', '18-25', 'la_banane', '$2y$10$lJLLGrLgwIQA6xXuYsZ2Mex6gekdBgTo6yaDahTtZhDF1eRi9S02m'),
+(9, 'Mathieu_bouquerel@hotmail.fr', 'Bouquerel', 'Mathieu', '+25', 'Mat', '$2y$10$FmH5f40anxGhZDp38TYkJ.iv6dpetmr7HewmsJzIX0uUK.z6b8Gki'),
+(10, 'boukacem@hotmail.com', 'Boukacem', 'Abdeslam', '18-25', 'Sham', '$2y$10$5ylkHSXFEq/os/Pgs4rh.u52YodBaZ4GnOCD1ihVBFQRHy9iSnmbu'),
+(11, 'coralie_epowe@hotmail.com', 'Le Foll', 'Coralie', '18-25', 'Coralie', '$2y$10$fVIBz7amilGczZgwsJTWy.fFPvOclX8DE9PjkO6xSxEHTbPTYpwcC'),
+(12, 'bonte.nicodu62@gmail.com', 'Bonte', 'Nicolas', '18-25', 'Nico', '$2y$10$Nq3gWzYNfektKExGVoo67Ot3k4L8V9LYu8MlcC9Qp2qSh9EKDNQte'),
+(13, 'ckiltonton@gmail.com', 'Rémi', 'Legrand', '18-25', 'Rémi ', '$2y$10$8Bwq4barkZQ3/XhZKfzeGOzVQQmN9icyuCvoQbXyJ/Z/myDb/2J1W'),
+(14, 'Scozor@hotmail.com', 'Dambrine', 'Benjamin', '18-25', 'Scozor', '$2y$10$2CqAqGKxuecMcUq4NgnRqeiXGnA8sh37FhXc6BTpguIh9jWACf2Bu'),
+(15, 'marie.pieri@orange.fr', 'Piéri ', 'Marie', '18-25', 'Malanthe', '$2y$10$aRH6pV8mCTR9gEyxaO3DBuq98JoIJlJRr2l/MMpc6pwMYqlcu1/IO'),
+(16, 'f.delfy@cegetel.net', 'Delfly', 'Frederic', '+25', 'Mackfly', '$2y$10$Y/Rjatlajp4cR93QWrXKJuUW95q41Cu6MsAB17VB8VQfbB0HsDG3W');
 
 --
 -- Contraintes pour les tables déchargées

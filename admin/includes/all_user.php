@@ -56,26 +56,18 @@
             </div>
         </div>
     </nav>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <BR>
-    <div class="container">
+    
+     <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>prenom</th>
-                        <th>nom</th>
-                        <th>pseudo</th>
-                        <th>mail</th>
-                        <th>tranche d'age</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Pseudo</th>
+                        <th>Mail</th>
+                        <th>Tranche d'âge</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,7 +75,7 @@
                 </tbody>
             </table>
         </div>
-    </section>
+    </header>
 
     <footer class="footer text-center">
         <div class="container">
@@ -135,19 +127,19 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="ressources/vendor/jquery/jquery.min.js"></script>
-  <script src="ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../ressources/vendor/jquery/jquery.min.js"></script>
+  <script src="../ressources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../ressources/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../ressources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Contact Form JavaScript -->
-  <script src="ressources/js/jqBootstrapValidation.js"></script>
-  <script src="ressources/js/contact_me.js"></script>
+  <script src="../ressources/js/jqBootstrapValidation.js"></script>
+  <script src="../ressources/js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="ressources/js/freelancer.min.js"></script>
+  <script src="../ressources/js/freelancer.min.js"></script>
 
 </body>
 
