@@ -9,7 +9,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="CrewStiant">
@@ -60,7 +60,9 @@
      <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
-            <table class="table table-striped">
+            <button type="button" tabindex="6" id="export" onclick="tableToExcel('id_table', 'Tableau Excel')" class="btn btn-primary reset-selection">Export .xls&nbsp;&nbsp;<i class="fa fa-cog fa-fw"></i></button>
+            <br><br>
+            <table id="id_table" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Prénom</th>
@@ -81,7 +83,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 caseFooter">
-                    <img class="img-fluid mb-5 d-block mx-auto" src="ressources/img/adefi_final.png" alt="">                 
+                    <img class="img-fluid mb-5 d-block mx-auto" src="../ressources/img/adefi_final.png" alt="">                 
                      
                         <a href="https://www.adefi-ml.com/">lien ADEFI</a>
                 </div>
@@ -140,6 +142,22 @@
 
   <!-- Custom scripts for this template -->
   <script src="../ressources/js/freelancer.min.js"></script>
+
+  
+ <!-- Script telechargement Exel -->           
+ <script type="text/javascript">
+        var tableToExcel = (function () {
+            var uri = 'data:application/vnd.ms-excel;base64,'
+                , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office"xmlns:x="urn:schemas-microsoft-com:office:excel"xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><!--[endif]--></head><body><table>{table}</table></body></html>'
+                , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+                , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+                return function (table, name) {
+                if (!table.nodeType) table = document.getElementById(table)
+                var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }
+                window.location.href = uri + base64(format(template, ctx))
+            }
+        })()
+    </script> 
 
 </body>
 
