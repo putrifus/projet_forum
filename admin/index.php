@@ -8,6 +8,4 @@ if(isset($_SESSION['admin'])){
     unset($_SESSION['login']);
     include("includes/co_admin.php");
 }
-
-//password admin a modif : id:admin password:Dh2Jd0wC9J
 ?>
